@@ -42,3 +42,9 @@
 build/**
 dep.list
 tmp
+/data/
+testing.ipynb
+__pycache__
+random_stuff.py
+.idea/
+src/.ipynb_checkpoints/

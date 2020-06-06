@@ -32,17 +32,16 @@ url_meteo = ["https://www.dati.lombardia.it/api/views/erjn-istm/files/60005865-2
              "https://www.dati.lombardia.it/api/views/76wm-spny/files/8ac843e8-3364-4499-b531-46f6c116b014?filename=sensori_meteo_2013.zip",
              "https://www.dati.lombardia.it/api/views/srpn-ykcs/files/aeaf95c2-0a2d-4648-93ec-e7baccebe459?filename=sensori_meteo_2011-2012.zip",
              "https://www.dati.lombardia.it/api/views/9nu5-ed8s/files/96c13001-016f-43a2-8d3d-439fe038d226?filename=sensori_meteo_2009-2010.zip",
-             "https://www.dati.lombardia.it/api/views/6udq-c5ub/files/e436193e-66c6-4f22-8564-6d79b7f8664f?filename=sensori_meteo_2006-2008.zip",
+             #"https://www.dati.lombardia.it/api/views/6udq-c5ub/files/e436193e-66c6-4f22-8564-6d79b7f8664f?filename=sensori_meteo_2006-2008.zip", ARCHIVIO DANNEGGIATO, CONTATTATO ARPA PER SEGNALARE IL PROB
              "https://www.dati.lombardia.it/api/views/stys-ktts/files/b599de2c-51c8-423e-8523-fbf1ca3d54ef?filename=sensori_meteo_2001-2005.zip",
              "https://www.dati.lombardia.it/api/views/tj2h-b7vd/files/a96ddd81-2004-41aa-999a-ccaaae86e10d?filename=sensori_meteo_1989-2000.zip"]
-
 
 def download_file_meteo():
     base_dir = "../data/meteo_raw"
     if not os.path.exists(base_dir): #se non esiste la dir di output la creo
         os.mkdir(base_dir)
     print("Downloading metereological raw data..")
-    for url in url_aria:
+    for url in url_meteo:
         filename = url.split("=")[1] #estraggo il nome del file
         filepath = base_dir + "/" + filename
         print("Downloading", filename)
@@ -84,7 +83,9 @@ def download_file_aria():
 
 
 def download_files():
-    download_file_aria()
-    download_file_meteo()
+	if not os.path.exists("../data"):
+		os.mkdir("../data")
+	download_file_aria()
+	download_file_meteo()
 
 #download_files()

@@ -22,7 +22,7 @@ def process_csv_meteo():
                 sensore_df = chunk[chunk.IdSensore == sensore] #seleziono la parte di dataframe che mi serve
                 file_sensore = f"../data/sensori_meteo_csv/{sensore}.csv"
                 file_exist = os.path.isfile(file_sensore)
-                sensore_df.to_csv(file_sensore, mode='a', header=not file_exist) #devo scrivere l'header solo quando creo il file
+                sensore_df.to_csv(file_sensore, mode='a', header=not file_exist, index=False) #devo scrivere l'header solo quando creo il file
                 #print("File", sensore, " written..")
 
     print("Process done in %s seconds" % (time.time() - start))
@@ -44,7 +44,7 @@ def process_csv_aria():
                 sensore_df = chunk[chunk.IdSensore == sensore]
                 file_sensore = f"../data/sensori_aria_csv/{sensore}.csv" 
                 file_exist = os.path.isfile(file_sensore)
-                sensore_df.to_csv(file_sensore, mode='a', header=not file_exist)
+                sensore_df.to_csv(file_sensore, mode='a', header=not file_exist, index=False)
                 #print("File", sensore, " written..")
 
     print("Process done in %s seconds" % (time.time() - start))
@@ -56,5 +56,4 @@ def process_csv():
     #TODO: chiamata a funzione che elimini i CSV annuali?
 
 #process_csv()
-#TODO: miglior nome per i file?
-#TODO: pulizia gitignore
+#TODO: miglior nome per i file dei sensori?

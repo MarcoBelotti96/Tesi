@@ -15,7 +15,9 @@ def get_values_renamed(path, idsensore, nome_misura, agg_unit):
 #preparazione del dataframe per applicare random forest
 #-1 per i sensori che non si vogliono usare
 # agg_unit: l'unità temporale su cui aggregare i dati (h, d, ...)
-def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, agg_unit):
+def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, **kwargs):
+	agg_unit = kwargs.get("agg_unit", "d")
+
 	dfs = []
 	df_aria = get_values_renamed(dir_aria, id_aria, "inquinante", agg_unit)
 	dfs.append(df_aria)
@@ -45,6 +47,7 @@ def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, a
 		tot = tot.join(dfx)
 	tot["day_of_year"] = tot.index.dayofyear
 	tot["day_of_week"] = tot.index.dayofweek	
+	tot["epoch"] = tot.index.astype("int64")
 
 	#filtro le date per cui non ho rilevazioni per l'inquinante
 	tot = tot.dropna(subset=["inquinante"])

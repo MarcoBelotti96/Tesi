@@ -32,8 +32,8 @@ url_meteo = ["https://www.dati.lombardia.it/api/views/erjn-istm/files/60005865-2
              "https://www.dati.lombardia.it/api/views/76wm-spny/files/8ac843e8-3364-4499-b531-46f6c116b014?filename=sensori_meteo_2013.zip",
              "https://www.dati.lombardia.it/api/views/srpn-ykcs/files/aeaf95c2-0a2d-4648-93ec-e7baccebe459?filename=sensori_meteo_2011-2012.zip",
              "https://www.dati.lombardia.it/api/views/9nu5-ed8s/files/96c13001-016f-43a2-8d3d-439fe038d226?filename=sensori_meteo_2009-2010.zip",
-             #"https://www.dati.lombardia.it/api/views/6udq-c5ub/files/e436193e-66c6-4f22-8564-6d79b7f8664f?filename=sensori_meteo_2006-2008.zip", ARCHIVIO DANNEGGIATO, CONTATTATO ARPA PER SEGNALARE IL PROB
-             "https://www.dati.lombardia.it/api/views/stys-ktts/files/b599de2c-51c8-423e-8523-fbf1ca3d54ef?filename=sensori_meteo_2001-2005.zip",
+             "https://www.dati.lombardia.it/api/views/6udq-c5ub/files/db7a86ff-0975-4646-aa3e-453a2af9b370?filename=sensori_meteo_2006-2008.zip",
+			 "https://www.dati.lombardia.it/api/views/stys-ktts/files/b599de2c-51c8-423e-8523-fbf1ca3d54ef?filename=sensori_meteo_2001-2005.zip",
              "https://www.dati.lombardia.it/api/views/tj2h-b7vd/files/a96ddd81-2004-41aa-999a-ccaaae86e10d?filename=sensori_meteo_1989-2000.zip"]
 
 def download_file_meteo():

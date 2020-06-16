@@ -53,7 +53,5 @@ def process_csv_aria():
 def process_csv():
     process_csv_aria()
     process_csv_meteo()
-    #TODO: chiamata a funzione che elimini i CSV annuali?
 
 #process_csv()
-#TODO: miglior nome per i file dei sensori?

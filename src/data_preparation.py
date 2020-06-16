@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 import pandas as pd
+import numpy as np
 
 dir_meteo = "../data/sensori_meteo_csv"
 dir_aria = "../data/sensori_aria_csv"
@@ -15,7 +16,7 @@ def get_values_renamed(path, idsensore, nome_misura, agg_unit):
 #preparazione del dataframe per applicare random forest
 #-1 per i sensori che non si vogliono usare
 # agg_unit: l'unità temporale su cui aggregare i dati (h, d, ...)
-def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, **kwargs):
+def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad, **kwargs):
 	agg_unit = kwargs.get("agg_unit", "d")
 
 	dfs = []
@@ -40,6 +41,9 @@ def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, *
 	if(id_umid != -1):
 		df_umid = get_values_renamed(dir_meteo, id_umid, "umidita", agg_unit)
 		dfs.append(df_umid)
+	if(id_rad != -1):
+		df_rad = get_values_renamed(dir_meteo, id_rad, "radiazione", agg_unit)
+		dfs.append(df_rad)
 	
 	#concateno le rilevazioni dei vari sensori e aggiungo le variabili temporali	
 	tot = dfs[0]
@@ -54,5 +58,14 @@ def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, *
 
 	#riempio le altre misure mancanti con le medie
 	tot = tot.fillna(tot.mean())
+
+	#aggiungo le variabili legate alle precipitazioni
+	tot["pioggia"] = np.where(tot["precipitazioni"]>0, True, False)
+	count = 0
+	for index, row in tot.iterrows():
+		if(row.precipitazioni > 0):
+			count = 0
+		tot.loc[index, "giorni_senza_pioggia"] = count
+		count += 1
 
 	return tot

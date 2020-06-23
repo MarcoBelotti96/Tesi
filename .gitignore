@@ -48,3 +48,4 @@ __pycache__
 random_stuff.py
 .idea/
 src/.ipynb_checkpoints/
+*.txt

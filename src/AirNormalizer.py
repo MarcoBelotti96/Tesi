@@ -23,6 +23,9 @@ class AirNormalizer:
 	def get_model(self):
 		return self.model
 
+	def get_data(self):
+		return self.data
+
 	def get_trainingset(self):
 		return self.x_train
 

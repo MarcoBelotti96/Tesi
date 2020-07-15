@@ -49,3 +49,7 @@ random_stuff.py
 .idea/
 src/.ipynb_checkpoints/
 *.txt
+/plots/
+src/AnalisiTraffico.ipynb
+src/PlotGenerator.py
+**.ods

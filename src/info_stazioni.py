@@ -26,3 +26,16 @@ def get_sensori_aria_byid(id_stazione):
 
 def get_sensori_meteo_byid(id_stazione):
 	return get_sensori_byid(stazioni_meteo, id_stazione)
+
+def get_datastart_sensore(df, id_sensore):
+	df = df[df.idsensore == id_sensore]
+	return pd.to_datetime(df.iloc[0]["datastart"])
+
+def get_datastart_sensore_meteo(id_sensore):
+	return get_datastart_sensore(stazioni_meteo, id_sensore)
+
+def get_datastart_sensore_aria(id_sensore):
+	return get_datastart_sensore(stazioni_aria, id_sensore)
+
+def get_name_stazione_aria_byidsensore(id_sensore):
+	return stazioni_aria.loc[stazioni_aria.idsensore == id_sensore, "nomestazione"].values[0]

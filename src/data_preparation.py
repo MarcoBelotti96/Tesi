@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 import pandas as pd
 import numpy as np
+import info_stazioni as info
 
 dir_meteo = "../data/sensori_meteo_csv"
 dir_aria = "../data/sensori_aria_csv"
@@ -59,8 +60,7 @@ def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, i
 	#riempio le altre misure mancanti con le medie
 	tot = tot.fillna(tot.mean())
 
-	#aggiungo le variabili legate alle precipitazioni
-	tot["pioggia"] = np.where(tot["precipitazioni"]>0, True, False)
+	#aggiungo il conteggio dei giorni dall'ultima pioggia registrata
 	count = 0
 	for index, row in tot.iterrows():
 		if(row.precipitazioni > 0):
@@ -68,4 +68,21 @@ def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, i
 		tot.loc[index, "giorni_senza_pioggia"] = count
 		count += 1
 
+	#filtro i dati a partire dalla data di messa in funzione del sensore più recente
+	date_threshold = mindate(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad)
+	tot = tot[tot.index >= date_threshold]
+
 	return tot
+
+def mindate(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad):
+	dates = []
+	dates.append(info.get_datastart_sensore_aria(id_aria))
+	dates.append(info.get_datastart_sensore_meteo(id_temp))
+	dates.append(info.get_datastart_sensore_meteo(id_prec))
+	dates.append(info.get_datastart_sensore_meteo(id_dirvento))
+	dates.append(info.get_datastart_sensore_meteo(id_velvento))
+	dates.append(info.get_datastart_sensore_meteo(id_umid))
+	dates.append(info.get_datastart_sensore_meteo(id_rad))
+	
+	dates.sort(reverse=True)
+	return dates[0]

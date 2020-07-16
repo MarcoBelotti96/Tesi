@@ -9,31 +9,20 @@ Nella cartella src sono contenuti sia i file sorgenti del codice utilizzato per 
 Sono inoltre contenuti alcuni notebook in cui sono svolte delle analisi sugli andamenti degli inquinanti dopo aver ricavato le serie normalizzate, così da vedere quali vantaggi e quali considerazioni ci permette di fare questo approccio.  
 
 ## Istruzioni 
-Per prima cosa è importante eseguire lo script di build **build.py**, che si occuperà di preparare dei dati pre-generati necessari per poter eseguire il codice contenuto nei notebook senza dover aspettare la lunga generazione delle serie normalizzate. 
-
-.. atrent: scrivi proprio il comando da lanciare
-
-
-
-
-Successivamente è possibile eseguire tutto il codice contenuto nel notebook **AnalisiIntroduttive.ipynb**, in cui vengono analizzati, tramite l'uso della normalizzazione, gli andamenti dei principali inquinanti nei capoluoghi lombardi.
-
-.. atrent: scrivi proprio il comando da lanciare
-
-
-
-
-Per eseguire il download di tutti i dataset, sia per quanto riguarda gli inquinanti che per le variabili meteorologiche, e il processamento in file CSV separati in base al sensore, eseguire lo script **alldata.py**, contenuto nella cartella 'src' (WARNING: richiede circa 1h di tempo). Questo script non ha a che fare con la generazione delle serie normalizzate.
-
 Per eseguire il codice è necessario aver installato Python3 ed i package [Pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) e [Sickit-learn](https://scikit-learn.org/stable/index.html)
 
 Inoltre per poter consultare i notebook è necessario aver installato [IPython](https://ipython.org) e [Jupyter Notebook](https://jupyter.org)
 
-.. atrent: queste sono dipendenze, andrebbero segnalate PRIMA
+Per prima cosa è importante eseguire lo script di build **build.py**, che si occuperà di preparare dei dati pre-generati necessari per poter eseguire il codice contenuto nei notebook senza dover aspettare la lunga generazione delle serie normalizzate. 
 
+	./build.py
 
+Successivamente è possibile eseguire tutto il codice contenuto nel notebook **AnalisiIntroduttive.ipynb**, in cui vengono analizzati, tramite l'uso della normalizzazione, gli andamenti dei principali inquinanti nei capoluoghi lombardi.
 
+	jupyter notebook src/AnalisiIntroduttive.ipynb
 
+Per eseguire il download di tutti i dataset, sia per quanto riguarda gli inquinanti che per le variabili meteorologiche, e il processamento in file CSV separati in base al sensore, eseguire lo script **alldata.py**, contenuto nella cartella 'src' (WARNING: richiede circa 1h di tempo). Questo script non ha a che fare con la generazione delle serie normalizzate.
+Se siete interessati a svolgere ulteriori analisi sui dati messi a disposizione da ARPA Lombardia, lo script **alldata.py**, contenuto nella cartella 'src', si occupa di fare il download di tutti i dataset, sia per quanto riguarda gli inquinanti che le variabili meteorologiche, e il processamento in file CSV per singolo sensore. Una volta generati questi file è possibile usare il codice contenuto nei file di questa cartella per applicare la normalizzazione ai dati di interesse, ripetendo le modalità illustrate nei notebook.
 
 ## Contenuto file 
 Breve descrizione del contenuto dei file presenti nella cartella 'src' (TODO per prossimi commit è sicuramente la documentazione di tutto questo codice).

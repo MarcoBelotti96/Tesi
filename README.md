@@ -21,8 +21,7 @@ Successivamente è possibile eseguire tutto il codice contenuto nel notebook **A
 
 	jupyter notebook src/AnalisiIntroduttive.ipynb
 
-Per eseguire il download di tutti i dataset, sia per quanto riguarda gli inquinanti che per le variabili meteorologiche, e il processamento in file CSV separati in base al sensore, eseguire lo script **alldata.py**, contenuto nella cartella 'src' (WARNING: richiede circa 1h di tempo). Questo script non ha a che fare con la generazione delle serie normalizzate.
-Se siete interessati a svolgere ulteriori analisi sui dati messi a disposizione da ARPA Lombardia, lo script **alldata.py**, contenuto nella cartella 'src', si occupa di fare il download di tutti i dataset, sia per quanto riguarda gli inquinanti che le variabili meteorologiche, e il processamento in file CSV per singolo sensore. Una volta generati questi file è possibile usare il codice contenuto nei file di questa cartella per applicare la normalizzazione ai dati di interesse, ripetendo le modalità illustrate nei notebook.
+Se siete interessati a provare a svolgere ulteriori analisi sui dati messi a disposizione da ARPA Lombardia, lo script **alldata.py**, contenuto nella cartella 'src', si occupa di fare il download di tutti i dataset, sia per quanto riguarda gli inquinanti che le variabili meteorologiche, e il processamento in file CSV per singolo sensore (WARNING: è un processo molto lento, sul mio notebook i7, 8GB di RAM richiede circa 1 ora). Una volta generati questi file è possibile usare il codice contenuto nei file di questa cartella per applicare la normalizzazione ai dati di interesse, ripetendo le modalità illustrate nei notebook.
 
 ## Contenuto file 
 Breve descrizione del contenuto dei file presenti nella cartella 'src' (TODO per prossimi commit è sicuramente la documentazione di tutto questo codice).

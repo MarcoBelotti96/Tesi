@@ -2,9 +2,11 @@
 import pandas as pd
 import numpy as np
 import info_stazioni as info
+import datetime as dt
 
 dir_meteo = "../data/sensori_meteo_csv"
 dir_aria = "../data/sensori_aria_csv"
+areac_filepath = "../data/areaC/areac_alldata.csv"
 
 #estrae le serie delle rilevazioni per un dato sensore e rinomina la colonna valore col nome della misura
 def get_values_renamed(path, idsensore, nome_misura, agg_unit):
@@ -19,6 +21,7 @@ def get_values_renamed(path, idsensore, nome_misura, agg_unit):
 # agg_unit: l'unità temporale su cui aggregare i dati (h, d, ...)
 def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad, **kwargs):
 	agg_unit = kwargs.get("agg_unit", "d")
+	use_areac = kwargs.get("use_areac", False)
 
 	dfs = []
 	df_aria = get_values_renamed(dir_aria, id_aria, "inquinante", agg_unit)
@@ -45,6 +48,8 @@ def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, i
 	if(id_rad != -1):
 		df_rad = get_values_renamed(dir_meteo, id_rad, "radiazione", agg_unit)
 		dfs.append(df_rad)
+	if(use_areac):
+		dfs.append(pd.read_csv(areac_filepath, parse_dates=["data"], index_col="data"))
 	
 	#concateno le rilevazioni dei vari sensori e aggiungo le variabili temporali	
 	tot = dfs[0]
@@ -69,12 +74,12 @@ def prepare_data(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, i
 		count += 1
 
 	#filtro i dati a partire dalla data di messa in funzione del sensore più recente
-	date_threshold = mindate(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad)
+	date_threshold = mindate(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad, use_areac)
 	tot = tot[tot.index >= date_threshold]
 
 	return tot
 
-def mindate(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad):
+def mindate(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad, use_areac):
 	dates = []
 	dates.append(info.get_datastart_sensore_aria(id_aria))
 	dates.append(info.get_datastart_sensore_meteo(id_temp))
@@ -83,6 +88,8 @@ def mindate(id_aria, id_temp, id_prec, id_dirvento, id_velvento, id_umid, id_rad
 	dates.append(info.get_datastart_sensore_meteo(id_velvento))
 	dates.append(info.get_datastart_sensore_meteo(id_umid))
 	dates.append(info.get_datastart_sensore_meteo(id_rad))
+	if(use_areac):
+		dates.append(dt.datetime(2012, 1, 1)) #data inizio area C: 2012-01-01
 	
 	dates.sort(reverse=True)
 	return dates[0]

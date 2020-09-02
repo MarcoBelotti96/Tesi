@@ -1,5 +1,4 @@
 # Normalizzazione dati inquinamento atmosferico 
-----------------------------------------------------------------------------
 
 ## Cos'è la normalizzazione dei dati dell'inquinamento atmosferico? 
 Le concentrazioni degli inquinanti atmosferici sono fortemente influenzate dalle condizioni meteorologiche, che possono favorirne l'accumulo o la dispersione, e questo porta ad avere grande variabilità nei valori misurati anche in giornate molto vicine. Per normalizzazione dei dati dell'inquinamento si intende quindi quel processo, basato sull'utilizzo dell'algoritmo di machine learning Random Forest, che ci permette di ricavare, partendo dalla serie storica registrata da un sensore, l'andamento delle concentrazioni di tale inquinante indipendentemente dalle condizioni meteorologiche di ogni giornata. Così facendo diventa poi più semplice fare analisi sugli andamenti delle concentrazioni e sull'efficacia delle misure prese per il loro contenimento.
@@ -21,7 +20,14 @@ Successivamente è possibile eseguire tutto il codice contenuto nel notebook **A
 
 	jupyter notebook src/AnalisiIntroduttive.ipynb
 
-Se siete interessati a provare a svolgere ulteriori analisi sui dati messi a disposizione da ARPA Lombardia, lo script **alldata.py**, contenuto nella cartella 'src', si occupa di fare il download di tutti i dataset, sia per quanto riguarda gli inquinanti che le variabili meteorologiche, e il processamento in file CSV per singolo sensore (WARNING: è un processo molto lento, sul mio notebook i7, 8GB di RAM richiede circa 1 ora). Una volta generati questi file è possibile usare il codice contenuto nei file di questa cartella per applicare la normalizzazione ai dati di interesse, ripetendo le modalità illustrate nei notebook.
+Con comandi simili è possibile anche consultare i notebook AnalisiTraffico.ipynb e AnalisiCovid.ipynb, in cui viene applicata la nostra tecnica di normalizzazione dei dati per provare ad analizzare l'impatto del traffico e del lockdown durante l'epidemia di COVID-19 sulle concentrazioni degli inquinanti.
+
+Se siete interessati a provare a svolgere ulteriori analisi sui dati messi a disposizione da ARPA Lombardia, lo script **alldata.py**, contenuto nella cartella 'src', si occupa di fare il download di tutti i dataset, sia per quanto riguarda gli inquinanti, che le variabili meteorologiche che i dataset di Area C, e il processamento in file CSV per singolo sensore (WARNING: è un processo molto lento, sul mio notebook i7, 8GB di RAM richiede circa 1 ora). Una volta generati questi file è possibile usare il codice contenuto nei file di questa cartella per applicare la normalizzazione ai dati di interesse, ripetendo le modalità illustrate nei notebook.
+
+## Link utili
+- [Dataset sensori meteo](https://www.dati.lombardia.it/browse?q=sensori%20meteo&sortBy=relevance)
+- [Dataset sensori aria](https://www.dati.lombardia.it/browse?q=sensori%20aria&sortBy=relevance)
+- [Dataset ingressi Area C](https://dati.comune.milano.it/organization/comunedimilano?q=area+c&sort=score+desc%2C+metadata_modified+desc)
 
 ## Contenuto file 
 Breve descrizione del contenuto dei file presenti nella cartella 'src' (TODO per prossimi commit è sicuramente la documentazione di tutto questo codice).
@@ -35,8 +41,17 @@ Nel notebook sono state fatte una serie di prove per verificare l'applicabilità
 ### Analisi introduttive.ipynb
 In questo notebook sono svolte una serie di analisi sull'andamento delle serie normalizzate dei principali inquinani atmosferici nei capoluoghi di provincia lombardi. In questo notebook viene quindi usata la normalizzazione per valuitarne vantaggi e risultati ottenibili dalla sua applicazione.
 
+### AnalisiTraffico.ipynb
+In questo notebook sono svolte una serie di analisi per verificare come la nsotra tecnica possa essere utilizzata per verificare l'impatto del traffico sulle concentrazioni degli inquinanti e quale sia stato l'effetto di alcune misure limitative prese nella città di Milano.
+
+### AnalisiCovid.ipynb
+In questo notebook vengono fatte una serie di analisi per verificare, tramite l'uso di random forest, quale sia stato l'impatto del lockdown sulle concentrazioni degli inquinanti.
+
 ### get_data.py
 Si occupa di scaricare gli archivi zip dal sito di Regione Lombardia e di estrarre i CSV in una cartella specifica dalla quale saranno poi prelevati per essere elaborati.
+
+### get_data_areac.py
+Script che si occupa di recuperare i dataset degli ingressi in Area C, pubblicati dal comune di Milano, e di organizzarli in un file csv pronto per essere utilizzato nella costruzione dei modelli di random forest.
 
 ### process_csv.py
 Partendo dai CSV annuali scaricati in precedenza vengono generati i CSV di tutti i sensori

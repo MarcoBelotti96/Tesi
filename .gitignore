@@ -50,6 +50,6 @@ random_stuff.py
 src/.ipynb_checkpoints/
 *.txt
 /plots/
-src/AnalisiTraffico.ipynb
 src/PlotGenerator.py
 **.ods
+TODO

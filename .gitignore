@@ -23,6 +23,7 @@
 **.mtc*
 **.nav
 **.odt
+**.out
 **.orig
 **.rtf
 **.run.xml
@@ -55,3 +56,4 @@ src/PlotGenerator.py
 TODO
 /Tesi/scaletta.txt
 **.odp
+**Tesi.pdf

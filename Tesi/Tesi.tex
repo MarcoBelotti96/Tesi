@@ -25,6 +25,9 @@
 % Package per mantenere le immagini presenti nel documento all'interno delle sezioni di appartenenza
 \usepackage[section]{placeins}
 
+\usepackage[a4paper,top=2cm,bottom=2cm,outer=5cm,verbose,headheight=1cm,heightrounded]{geometry}
+\setlength{\marginparwidth}{4.5cm} %per farci stare todonotes, per il finale si può togliere
+
 \usepackage{todonotes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -609,14 +612,13 @@ Vediamo infatti come le due serie rimangano praticamente sempre equivalenti, non
 Per quanto riguarda le polveri sottili, quindi, il nostro metodo non rileva una particolare influenza dell'andamento del traffico sulle concentrazioni registrate, nemmeno a seguito di un calo del volume come quello che è avvenuto nel lockdown, mostrandoci ancora una volta come le fonti emissive più influenti per questi inquinanti non siano i veicoli a motore.
 
 
-\todo{atrent fin qui}
 \chapter{Effetti del lockdown per il Covid-19 sulle concentrazioni degli inquinanti}
 I mesi primaverili del 2020 sono stati caratterizzati dalla diffusione dell'epidemia di Covid-19 e dalle importanti misure prese per il suo contenimento. Queste limitazioni hanno portato ad avere un quadro emissivo eccezionale per gli inquinanti atmosferici, che difficilmente si sarebbe potuto verificare in condizioni normali. Questi mesi, infatti, sono stati caratterizzati da importanti limitazioni sugli spostamenti e alle attività produttive, quindi rappresentano un importante banco di prove per verificare come siano cambiate le concentrazioni degli inquinanti in atmosfera con una così drastica riduzione delle attività antropiche, dandoci la possibilità di valutare come effettivamente si potrebbe intervenire per ottenere ulteriori miglioramenti della qualità dell'aria.
 
 L'obbiettivo delle nostre analisi è stato mettere alla prova la nostra tecnica di normalizzazione per vedere come siano effettivamente cambiate le concentrazioni degli inquinanti durante i mesi dell'epidemia rispetto agli anni precedenti, dopo aver eliminato la variabilità derivata dalle condizoni meteorologiche e stagionali. È infatti importante considerare che l'epidemia è arrivata durante dei mesi che già normalmente sono abbastanza favorevoli per la maggior parte degli inquinanti di interesse, poichè le condizioni atmosferiche e meteorologiche dei mesi primaverili portano sempre ad un abbassamento delle concentrazioni misurate rispetto ai mesi invernali.
 Potendo eliminare la variabilità data dalla stagionalità e da queste condizioni meteorologiche che influenzano così tanto i valori misurati è quindi sicuramente interessante cercare di capire quanto i classici cali delle concentrazioni registrati nei mesi primaverili siano stati influenzati dal blocco generale avuto dalle attività umane in tali mesi.
 
-Abbiamo quindi trattato tutti gli inquinanti, confrontando l'andamento dei mesi tra febbraio e maggio del 2020 con quello degli anni tra il 2015 e il 2019 della media delle serie, normalizzate e non, dei capoluoghi di provincia già usate per le analisi precedenti. In questo modo potremo verificare se per i mesi dell'epidemia il nostro modello ha rilevato dei cali riconducibili proprio alle limitazioni imposte, in modo da capire quale tipo di interventi possa risultare più efficacie per il contenimento delle concentrazioni di ciascuno.
+Abbiamo quindi trattato tutti gli inquinanti, confrontando l'andamento dei mesi tra febbraio e maggio del 2020 con quello degli anni tra il 2015 e il 2019 della media delle serie, normalizzate e non, dei capoluoghi di provincia già usate per le analisi precedenti. In questo modo potremo verificare se per i mesi dell'epidemia il nostro modello ha rilevato dei cali riconducibili proprio alle limitazioni imposte, in modo da capire quale tipo di interventi possa risultare più efficacie\todo{spelling!} per il contenimento delle concentrazioni di ciascuno.
 
 \section{$NO_x$ e $NO_2$}
 \subsection{$NO_x$}
@@ -637,7 +639,7 @@ Abbiamo iniziato le nostre analisi trattando gli ossidi di azoto che, viste le l
 \end{figure}
 
 Guardando il grafico delle concentrazioni misurate\ref{fig:nox_covid} si nota chiaramente il calo delle concentrazioni classico dei mesi primaverili, causato proprio dalle condizioni più favorevoli alla dispersione. Tale calo, chiaramente, risulta invece eliminato quando si considerano le serie normalizzate (grafico\ref{fig:nox_covid_norm}).
-Guardando sia i grafici delle concentrazioni reali che quello delle serie normalizzate si osserva come nei mesi di lockdown le concentrazioni abbiano subito un importante ribasso rispetto agli anni precedenti, sicuramente dovuto al blocco del traffico e di alcune attività produttive. 
+Guardando sia i grafici delle concentrazioni reali che quello delle serie normalizzate si osserva come nei mesi di lockdown le concentrazioni abbiano subito un importante ribasso rispetto agli anni precedenti, sicuramente dovuto al blocco del traffico e di alcune attività produttive.\todo{atrent: beh "importante" è una parola grossa ;) stiamo parlando di un inquinante in calo negli anni, hai fatto una media 2015-2019 per cui hai preso dei valori circa del 2017 e li sta confrontando col 2020, il calo risulta di circa una decina di punti su 80, quindi un 12\%, probabilmente confrontando col solo 2019 sarebbe stato intorno al 10\%,  afronte di un lockdown totale...}
 
 \subsection{$NO_2$}
 Abbiamo verificato anche i dati relativi al biossido di azoto, aspettandoci comunque di ottenere risultati abbastanza simili a quelli visti sugli ossidi trattati nel loro complesso.
@@ -659,8 +661,8 @@ Abbiamo verificato anche i dati relativi al biossido di azoto, aspettandoci comu
 Anche in questo caso, infatti, oltre al classico calo dei mesi primaverili, si vede una differenza tra le concentrazioni del 2020 e quelle degli anni precedenti, sia considerando le concentrazioni misurate che guardando le serie normalizzate.
 Anche in questo caso le cause sono sicuramente da attribuire alle stesse ragioni che hanno portato al calo degli ossidi.
 
-Chiaramente una misura così restrittiva non è sicuramente applicabile in modo continuo, ma ci dimostra come interventi su larga scala possano avere un discreto impatto sulle concentrazioni a differenza di quello che si era visto analizzando dei provvedimenti presi in particolari località, i cui effetti si sono rivelati minimi se non addirittura nulli.
-Interventi su larga scala richiederebbero investimenti sull'innovazione tecnologica, per poter arrivare ad avere una flotta di veicoli circolanti a bassissime emissioni, così come potrebbe essere sicuramente utile investire su motorizzazioni "pulite" come quella elettrica. Chiaramente questo tipo di interventi richiede tempo, soprattutto per quanto riguarda i motori elettrici che al momento presentano ancora diverse problematiche da risolvere, e ci dimostra come non sia possibile intervenire sugli inquinanti pensando di abbatterne le concentrazioni rapidamente.
+Chiaramente una misura così restrittiva non è sicuramente applicabile in modo continuo, ma ci dimostra come interventi su larga scala possano avere un discreto\todo{atrent: "discreto" suona positivo, stiamo parlando di lievi riduzioni a fronte di lockdown "ammazza-economia"...} impatto sulle concentrazioni a differenza di quello che si era visto analizzando dei provvedimenti presi in particolari località, i cui effetti si sono rivelati minimi se non addirittura nulli.
+Interventi su larga scala richiederebbero investimenti sull'innovazione tecnologica, per poter arrivare ad avere una flotta di veicoli circolanti a bassissime emissioni, così come potrebbe essere sicuramente utile investire su motorizzazioni "pulite" come quella elettrica.\todo{atrent: eviterei di dare appigli ai fautori dell'elettrico, specie dati i problemi infrastrutturali grossi per passare a tale tipo di trazione} Chiaramente questo tipo di interventi richiede tempo, soprattutto per quanto riguarda i motori elettrici che al momento presentano ancora diverse problematiche\todo{atrent: se non le riassumi non dirlo} da risolvere, e ci dimostra come non sia possibile intervenire sugli inquinanti pensando di abbatterne le concentrazioni rapidamente.
 
 \section{PM10 e PM2.5}
 Per quanto riguarda le polveri sottili e l'andamento delle concentrazioni nel periodo di lockdown la situazione risulta essere più complessa rispetto agli ossidi di azoto.
@@ -681,7 +683,7 @@ Se da un lato, infatti, i cali di traffico e produzione industriale hanno sicura
 \end{figure}
 
 Per quanto riguarda la frazione più spessa del particolato (PM10) vediamo come le concentrazioni misurate si mantengano piuttosto in linea con quanto visto negli anni precedenti, con episodi come quello di fine Marzo in cui le concentrazioni hanno fatto registrare valori ben al di sopra del limite di legge, nonostante fossero già in vigore tutte le limitazioni imposte coi vari DPCM per il contenimento dei contagi.
-La serie normalizzata\ref{fig:pm10_covid_norm}, invece, evidenzia un leggero calo rispetto agli anni precedenti, che però potrebbe essere collegato al leggero trend decrescente che era già stato visto sulle serie normalizzate di questo inquinante.
+La serie normalizzata\ref{fig:pm10_covid_norm}, invece, evidenzia un leggero\todo{atrent: userei il termine "trascurabile"} calo rispetto agli anni precedenti, che però potrebbe essere collegato al leggero trend decrescente che era già stato visto sulle serie normalizzate di questo inquinante.
 
 \begin{figure}[h]
 \centering
@@ -699,9 +701,9 @@ La serie normalizzata\ref{fig:pm10_covid_norm}, invece, evidenzia un leggero cal
 
 Esattamente come visto in precedenza, anche per la frazione più fine di particolato le concentrazioni si mantengono abbastanza invariate rispetto agli anni precedenti, con una piccola discrepanza sulle serie normalizzate nuovamente dovuta alla presenza di un trend leggermente calante individuato per le serie normalizzate di questo inquinante\ref{fig:pm25_covid_norm}.
 
-Per quanto riguarda il particolato, quindi, nonostante la riduzione del traffico e delle attività produttive, il maggior fabbisogno energetico delle famiglie ha fatto sì che le concentrazioni rimanessero comunque su livelli più o meno simili a quelli degli anni precedenti.
+Per quanto riguarda il particolato, quindi, nonostante la riduzione del traffico e delle attività produttive, il maggior fabbisogno energetico\todo{atrent: è una tua ipotesi giusto? va detto in tal senso, oppure trova ref bib} delle famiglie ha fatto sì che le concentrazioni rimanessero comunque su livelli più o meno simili a quelli degli anni precedenti.
 Questo ci mostra come effettivamente per trattare questi inquinanti, la cui origine è sicuramente varia e complessa, non si possano prendere provvedimenti riguardanti solamente un settore in particolare, come potrebbe essere il traffico, ma vanno pensati dei piani che riguardino tutte le fonti emissive.
-La presenza di un trend negativo per tutte e due le frazioni di particolato è sicuramente un'indicazione che comunque la strada che si sta percorrendo negli ultimi anni sia quella giusta e che sia necessario proseguire investendo sempre di più su innovazione tecnologica e fonti rinnovabili.
+La presenza di un trend negativo per tutte e due le frazioni di particolato è sicuramente un'indicazione che comunque la strada\todo{atrent: quale strada? se quella delle limitazioni alla circolazione no grazie, se si parla del progresso tecnologico ok, va esplicitato meglio, lo dici dopo ma uno si potrebbe appigliare} che si sta percorrendo negli ultimi anni sia quella giusta e che sia necessario proseguire investendo sempre di più su innovazione tecnologica e fonti rinnovabili.\todo{atrent: questa delle fonti rinnovabili è affermazione discutibile, anche il biogas e l'alcol agricolo sono rinnovabili... spiega meglio}
 
 \section{CO}
 Anche per quanto riguarda il monossido di carbonio il quadro emissivo è cambiato durante i mesi dell'epidemia, con l'importante riduzione del traffico che però anche in questo caso è stata bilanciata dal maggior uso dei riscaldamenti domestici. Traffico e combustioni non industriali, infatti, sono le due categorie maggiormente responsabili delle emissioni di questo inquinante in atmosfera.
@@ -720,9 +722,9 @@ Anche per quanto riguarda il monossido di carbonio il quadro emissivo è cambiat
 \label{fig:co_covid_norm}
 \end{figure}
 
-Successivamente all'applicazione delle limitazioni tramite l'emanazione dei DPCM del mese di Marzo si nota come effettivamente le concentrazioni misurate di monossido di carbonio risultino essere leggermente minori rispetto a quelle degli anni precedenti\ref{fig:co_covid}. Tale differenza viene confermata anche dalle serie normalizzate, anche se bisogna ricordare che si tratta di differenze minime su valori già molto bassi.
+Successivamente all'applicazione delle limitazioni tramite l'emanazione dei DPCM del mese di Marzo si nota come effettivamente le concentrazioni misurate di monossido di carbonio risultino essere leggermente minori rispetto a quelle degli anni precedenti\ref{fig:co_covid}. Tale differenza viene confermata anche dalle serie normalizzate, anche se bisogna ricordare che si tratta di differenze minime su valori già molto bassi.\todo{atrent: metterei in prospettiva, aggiungi la linea di soglia e vedrai che sparisce la differenza ;)}
 
-Le limitazioni imposte, quindi, potrebbero aver avuto qualche effetto sulle concentrazioni di monossido di carbonio, anche se ormai la situazione per questo inquinante non risulta più essere così critica e quindi c'è anche meno interesse nella ricerca di nuove misure di contenimento, visto che quelle già presenti risultano essere più che sufficientemente efficaci.
+Le limitazioni imposte, quindi, potrebbero aver avuto qualche effetto sulle concentrazioni di monossido di carbonio, anche se ormai la situazione per questo inquinante non risulta più essere così critica\todo{atrent: "non risulta essere critica in alcun modo", usa frasi meno eufemistiche se hai i numeri per dirlo} e quindi c'è anche meno interesse nella ricerca di nuove misure di contenimento, visto che quelle già presenti risultano essere più che sufficientemente efficaci.
 
 \section{Benzene}
 Il benzene è sicuramente un inquinante importante da analizzare in questo periodo, visto che spesso viene indicato come tracciante del traffico veicolare (specialmente quello motorizzato a benzina) che proprio in questi mesi ha subito importanti limitazioni e potrebbe quindi aver portato ad un calo delle concentrazioni misurate.
@@ -741,8 +743,8 @@ Il benzene è sicuramente un inquinante importante da analizzare in questo perio
 \label{fig:benzene_covid_norm}
 \end{figure}
 
-Anche per questo inquinante, così collegato al traffico, notiamo uno scostamento rispetto all'andamento degli anni precedenti abbastanza comptabile con quello visto sugli ossidi di azoto.
-Questo scostamento, confermato anche dalle serie normalizzate, conferma come effettivamente il traffico influenzi le concentrazioni di questo inquinante e quindi come una sua riduzione abbia conseguentemente portato ad un abbassamento delle concentrazioni.
+Anche per questo inquinante, così collegato al traffico, notiamo uno scostamento rispetto all'andamento degli anni precedenti abbastanza comptabile\todo{?} con quello visto sugli ossidi di azoto.
+Questo scostamento, confermato anche dalle serie normalizzate, conferma come effettivamente il traffico influenzi le concentrazioni di questo inquinante e quindi come una sua riduzione abbia conseguentemente portato ad un abbassamento delle concentrazioni.\todo{atrent: sì ma ribadisci sempre l'inutilità di guardare inquinanti AMPIAMENTE sotto soglia, non voglio che questo testo diventi un'arma per chi buole introdurre limitazioni, non ci devono essere appigli di sorta}
 
 Sebbene la situazione per quanto riguarda il benzene non desti preoccupazioni, visto che i livelli ormai sono ampiamente sotto alle soglie di legge, abbiamo visto come una riduzione del traffico abbia portato ad un ulteriore miglioramento della situazione per quanto riguarda questo inquinante, che è auspicabile venga portato avanti dall'innovazione tecnologica nel corso dei prossimi anni.
 
@@ -784,7 +786,7 @@ L'ozono, essendo un inquinante secondario, ha origine molto varie e quindi può 
 
 Vediamo come le concentrazioni per quest'anno si siano mantenute abbastanza in linea con quelle degli anni precedenti mostrando il classico trend crescente dei mesi primaverili che caratterizza questo inquinante, con la serie normalizzata che segnala un aumento, dovuto probabilmente anche alla presenza del trend positivo già visto in precedenza.
 
-Nonostante i grossi cambiamenti visti nei mesi di lockdown, quindi, l'ozono non risulta essere stato colpito da tali misure. Questo inquinante, considerate le sue complesse e varie origini, risulta quindi difficile da trattare e trovare misure per il suo contenimento è molto complesso. Si è comunque visto come un blocco generale delle attività non sia stato sufficiente per migliorarne la situazione.
+Nonostante i grossi cambiamenti visti nei mesi di lockdown, quindi, l'ozono non risulta essere stato colpito da tali misure. Questo inquinante, considerate le sue complesse e varie origini, risulta quindi difficile da trattare e trovare misure per il suo contenimento è molto complesso. Si è comunque visto come un blocco generale delle attività non sia stato sufficiente per migliorarne la situazione.\todo{atrent: non è questione di "non essere sufficiente", è questione di "non c'entrare proprio un tubo"! è come dare un'aspirina a uno che si è rotto una gamba, se una azione NON ha effetto su un fattore non ha senso parlare di "sufficiente effetto" perché sembra che se lo inasprisci magari funziona... direi più che altro "non ha ALCUNA relazione con l'inquinante sotto osservazione"}
 
 \section{Ammoniaca}
 In ultimo andiamo a controllare l'andamento dell'ammoniaca, per la quale le serie normalizzate dei nostri modelli avevano individuato un andamento piuttosto fluttuante.
@@ -808,6 +810,7 @@ Questo calo probabilmente deriva da una minor attività anche per quanto riguard
 
 Visto il forte collegamento tra questo inquinante e l'agricoltura qualsiasi misura di contenimento delle concentrazioni dovrà necessariamente agire su tale settore, poichè effettivamente con un calo dell'attività si è notato anche un calo nelle concentrazioni rilevate.
 
+\todo{atrent fin qui, questa la leggerò più avanti, a valle di tutto}
 \chapter{Conclusioni}
 Nelle nostre analisi abbiamo dimostrato come sia possibile applicare l'algoritmo Random Forest per eliminare l'influenza della meteorologia dalle serie dei principali inquinanti atmosferici, in modo da poterne analizzare l'andamento e le variazioni in modo più preciso.  
 Controllare l'influenza della meteorologia in analisi di questo tipo è fondamentale, poichè la sua influenza risulta per la maggior parte delle volte essere maggiore di quella che possono avere limitazioni o particolari eventi che possono modificare le concentrazioni di inquinanti presenti in atmosfera. Random Forest, così come molte altre tecniche del mondo del machine learning, si adattano perfettamente a questo tipo di modellazione e permettono di ottenere dei risultati validi ed affidabili.  
@@ -816,10 +819,14 @@ Il trend decrescente presente per molti inquinanti ci mostra come effettivamente
 Riguardo all'impatto del traffico sull'inquinamento si è visto come provvedimenti presi solo localmente, come possono essere state Area C o Area B per il comune di Milano, siano praticamente ininfluenti sia a causa del fatto che gli inquinanti in atmosfera possono viaggiare anche diversi chilometri che perchè ormai l'influenza del traffico, grazie alle numerose innovazioni introdotte nel corso degli anni. è piuttosto contenuta. Normalizzando le serie anche utilizzando i dati del traffico si è infatti visto come mediamente il suo apporto non porti a grosse variazioni sui valori registrati, se non durante il periodo del lockdown in cui si sono visti dei cali sulle concentrazioni di quegli inquinanti maggiormente collegati al traffico. L'entità di questi cali, comunque abbastanza contenuti, ci ha dimostrato come per il livello di tecnologia attuale effettivamente il contributo del traffico sia ormai abbastanza contenuto e questo non dovrebbe sorprenderci visti i sempre più stringenti limiti emissivi che vengono imposti.  
 Occupandoci del priodo di lockdown primaverile causato dall'epidemia di Covid-19 non si sono riscontrate grosse variazioni rispetto alla situazione normale, poichè i cali nelle emissioni dovuti alla sospensione di alcune attività sono stati bilanciati dal maggior fabbisogno energetico delle famiglie. Solo per quanto riguarda gli inquinanti maggiormente collegati al traffico, ovvero ossidi di azoto e benzene, si sono visti dei cali di lieve entità compatibili con la riduzione del numero di veicoli circolanti. 
 
+
+\todo{atrent: aggiungere appendice col codice per riprodurre tutti i calcoli e grafici}
+
 \bibliographystyle{plain}
 \bibliography{Biblio}
 %\addcontentsline{toc}{chapter}{Bibliografia}
 
-\listoffigures
+%\listoffigures
+\todo{atrent: togliere, lo commento via}
 
 \end{document}

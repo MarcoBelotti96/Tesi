@@ -98,11 +98,16 @@ Il nostro obbiettivo è quindi stato quello di ricercare una tecnica per normali
 Un metodo comune per riuscire a fare questa ``pulizia''%\todo{atrent: le virgolette si fanno così} 
 dei dati si basa sulla creazione di modelli statistici che tramite l'uso di diverse variabili \textit{predittrici}
 %\todo{atrent: andrà speigato bene cosa si intende col termine, qui lo metterei tra virgolette o in corsivo}
+%predittrici è il nome formale delle variabili nei modelli statistici
 , come le misure meteorologiche su vento, precipitazioni e radiazione solare e variabili temporali legate al giorno dell'anno e alla date, siano capaci di prevedere i valori delle concentrazioni che si sarebbero misurate per un inquinante in base ai valori di ciascuna. Se i modelli che riusciamo a creare si rivelano abbastanza precisi nell'attività predittoria e in grado di spiegare buona parte della varianza delle concentrazioni allora possiamo usarli con una certa confidenza per eliminare gli effetti della meteorologia dalle concentrazioni di inquinanti.  
 
-Questo procedimento viene però complicato dal fatto che le dinamiche che portano la meteorologia a modificare le concentrazioni varino molto a seconda della località e che quindi differenti contesti, come ad esempio possono essere una città rispetto ad una località montana o situata a fondo valle, necessitino trattazione specifiche a seconda del caso. Inoltre è chiaro come le variabili meteorologiche tra di loro siano collegate e correlate, cioè che cambiamenti nei valori di una vengano riflessi anche sulle altre, e questo porta all'insorgere di una serie di problemi come la normalità, la multi collinearità e l'indipendenza che rendono la trattazione con diversi metodi molto difficile e complicata \cite{gunst1975regression}. %\todo{atrent: spiegare i termini o citare biblio}
+Questo procedimento viene però complicato dal fatto che le dinamiche che portano la meteorologia a modificare le concentrazioni varino molto a seconda della località e che quindi differenti contesti, come ad esempio possono essere una città rispetto ad una località montana o situata a fondo valle, necessitino trattazione specifiche a seconda del caso. Inoltre è chiaro come le variabili meteorologiche tra di loro siano collegate e correlate, cioè che cambiamenti nei valori di una vengano riflessi anche sulle altre, e questo porta all'insorgere di una serie di problemi come la normalità, la multi collinearità e l'indipendenza che rendono la trattazione con diversi metodi molto difficile e complicata \cite{gunst1975regression}. 
+%\todo{atrent: spiegare i termini o citare biblio}
+%aggiunta breve spiegazione più bib
 
-Nel corso degli ultimi tre decenni nel mondo dell'informatica ha preso campo un'area detta machine learning (ML), che fa uso dei computer e della statistica per creare dei modelli predittori che potessero porsi come alternativa ai classici metodi statistici già esistenti. Sono quindi state sviluppate tecniche di ML non parametriche che, grazie all'uso dei computer per analizzare grosse moli di dati, permettono di arrivare alla creazione di modelli con buone capacità predittive anche senza occuparsi dei problemi che invece caratterizzano gli approcci puramente statistici. Questi ultimi richiedono infatti, prima di poterli applicare, di fare una serie di assunzioni sui dati considerati e su quali siano le relazioni che li legano ed inoltre molte volte anche la matematica necessaria è complicata e richiede particolare attenzione nella trattazione per essere sicuri di ottenere dei risultati attendibili. Gli algoritmi di machine learning, invece, sfruttando la capacità computazionale degli elaboratori, permettono di arrivare ad ottenere dei modelli altrettanto affidabili senza però doversi preoccupare dei diversi aspetti richiesti dalla statistica e che spesso ne limitano l'applicabilità. Inoltre, molte volte, l'obbiettivo dei modelli statistici è quello di inferire il modello dei dati per il caso considerato, ovvero capire come diversi fattori influenzino i valori di una variabile di interesse, mentre nel machine learning l'obbiettivo principale solitamente è quello di essere capaci di fare previsioni precise sui valori di tale variabile in base a quelli dei diversi fattori considerati \cite{breiman2003statistical}. %\todo{atrent: spiegare per sommi capi differenza fra i modelli classici e il ML}
+Nel corso degli ultimi tre decenni nel mondo dell'informatica ha preso campo un'area detta machine learning (ML), che fa uso dei computer e della statistica per creare dei modelli predittori che potessero porsi come alternativa ai classici metodi statistici già esistenti. Sono quindi state sviluppate tecniche di ML non parametriche che, grazie all'uso dei computer per analizzare grosse moli di dati, permettono di arrivare alla creazione di modelli con buone capacità predittive anche senza occuparsi dei problemi che invece caratterizzano gli approcci puramente statistici. Questi ultimi richiedono infatti, prima di poterli applicare, di fare una serie di assunzioni sui dati considerati e su quali siano le relazioni che li legano ed inoltre molte volte anche la matematica necessaria è complicata e richiede particolare attenzione nella trattazione per essere sicuri di ottenere dei risultati attendibili. Gli algoritmi di machine learning, invece, sfruttando la capacità computazionale degli elaboratori, permettono di arrivare ad ottenere dei modelli altrettanto affidabili senza però doversi preoccupare dei diversi aspetti richiesti dalla statistica e che spesso ne limitano l'applicabilità. Inoltre, molte volte, l'obbiettivo dei modelli statistici è quello di inferire il modello dei dati per il caso considerato, ovvero capire come diversi fattori influenzino i valori di una variabile di interesse, mentre nel machine learning l'obbiettivo principale solitamente è quello di essere capaci di fare previsioni precise sui valori di tale variabile in base a quelli dei diversi fattori considerati \cite{breiman2003statistical}. 
+%\todo{atrent: spiegare per sommi capi differenza fra i modelli classici e il ML}
+%aggiunta spiegazione più bib
 
 ARPA Lombardia possiede, sul territorio regionale, una rete di 85 stazioni fisse che, per mezzo di analizatori automatici, sono in grad di fornire rilevazioni ad intervalli di tempo regolari, permettendoci di creare quindi un dettagliato catalogo dei valori delle concentrazioni nel corso del tempo. Tutte queste rilevazioni vengono poi rese accessibili liberamente tramite archivi online, per permetterne la libera consultazione da parte di tutti i cittadini.  
 
@@ -114,7 +119,9 @@ Nel capitolo 2 viene introdotto random forest e viene mostrato come questa tecni
 
 Nel capitolo 3 viene analizzata, utilizzando la tecnica appena discussa, la situazione regionale andando a controllare l'andamento delle serie dei principali inquinanti nei capoluoghi di provincia lombardi.  
 
-Nel capitolo 4 verranno presentate le analisi svolte sull'influenza del traffico sulle concentrazioni di tre inquinanti: ossidi di azoto, particolato atmosferico (PM10 e PM2.5) e monossido di carbonio.\todo{atrent: metti sempre i subscript per i numeri nelle formule chimiche, o almeno usa sempre lo stesso standard}
+Nel capitolo 4 verranno presentate le analisi svolte sull'influenza del traffico sulle concentrazioni di tre inquinanti: ossidi di azoto, particolato atmosferico (PM10 e PM2.5) e monossido di carbonio.
+%\todo{atrent: metti sempre i subscript per i numeri nelle formule chimiche, o almeno usa sempre lo stesso standard}
+%PM10 e PM2.5 di solito sono riportati così, senza subscript. Aggiunto per le formule chimiche tipo NOx, O3, ecc..
 Nel capitolo 5 verrà presentata un'analisi del periodo di diffusione dell'epidemia di Covid-19 e di quali siano stati gli effetti del conseguente lockdown svoltosi nei mesi di marzo ed aprile sulle concentrazioni.
 
 \chapter{Normalizzazione meteorologica utilizzando Random Forest}
@@ -128,9 +135,13 @@ Per poter analizzare i dati sull'inquinamento atmosferico volendo capire come le
 
 Nel corso degli anni diversi studi hanno provato ad affrontare la questione usando metodi che portassero ad ottenere dei modelli statistici in grado di capire e modellare le relazioni tra inquinanti e condizioni atmosferiche e, indipendentemente dal metodo usato, si è visto come variabili legate alla meteorologia, all'altezza dello strato di rimescolamento ed alla stagionalità siano in grado di spiegare con una certa precisioni gli andamenti delle serie di inquinanti \cite{aldrin2005generalised, elminir2005depndence, eagleman1991air, seagal1982numerical, cattani2014analisi, barmpadimos2011influence}.  %\todo{atrent: alcuni non li risolve, puoi usare la virgola (vedi sopra mia correzione), andrebbero riportate le conclusioni principali dei vari paper citati}
 
-I processi atmosferici, però, sono molto complessi, non lineari e spesso si riscontra collinearità tra le osservazioni di variabili diverse, una situazione in cui i valori di una possono essere approssimati in modo preciso da quelli di un'altra, e questo rende la modellazione grazie all'uso di metodi parametrici, cioè quelli basati su metodi puramente matematici come la regressione lineare, molto complicata poichè questi fattori influiscono molto sulla precisione e sull'affidabilità dei risultati ottenuti \cite{gunst1975regression}. %\todo{atrent: interessante, andrebbe approfondito, così non viene spiegato}
+I processi atmosferici, però, sono molto complessi, non lineari e spesso si riscontra collinearità tra le osservazioni di variabili diverse, una situazione in cui i valori di una possono essere approssimati in modo preciso da quelli di un'altra, e questo rende la modellazione grazie all'uso di metodi parametrici, cioè quelli basati su metodi puramente matematici come la regressione lineare, molto complicata poichè questi fattori influiscono molto sulla precisione e sull'affidabilità dei risultati ottenuti \cite{gunst1975regression}. 
+%\todo{atrent: interessante, andrebbe approfondito, così non viene spiegato}
+%aggiunta bib
 
-Il machine learning, grazie all'uso di metodi non parametrici, ovvero metodi che non hanno bisogno di fare nessun tipo di assunzione sui dati considerati o sulle relazioni che intercorrono tra le diverse variabili, che quindi si adattano perfettamente ad un'analisi così complessa come quella degli inquinanti e della loro dispersione in atmosfera, ci permette di arrivare ad estrarre dei modelli in grado di simulare in modo abbstanza preciso le relazioni tra le diverse variabili in gioco.  %\todo{atrent: se ML così potente possibile che non ci abbia pensato nessuno?}
+Il machine learning, grazie all'uso di metodi non parametrici, ovvero metodi che non hanno bisogno di fare nessun tipo di assunzione sui dati considerati o sulle relazioni che intercorrono tra le diverse variabili, che quindi si adattano perfettamente ad un'analisi così complessa come quella degli inquinanti e della loro dispersione in atmosfera, ci permette di arrivare ad estrarre dei modelli in grado di simulare in modo abbstanza preciso le relazioni tra le diverse variabili in gioco.  
+%\todo{atrent: se ML così potente possibile che non ci abbia pensato nessuno?}
+%nel testo sono citati diversi paper che tramite ML hanno analizzato l'inquinamento
 
 Una volta in possesso di uno strumento che sappia spiegarci come variazioni dei valori di una variabile influenzino quelli di un'altra, che nel nostro caso significa arrivare ad ottenere un modello capace di dirci come cambiamenti nelle condizioni atmosferiche e nella stagionalità portino a cambiare le concentrazioni registrate per gli inquinanti, diventa semplice anche arrivare ad eliminare la loro influenza. Le variabili predittrici, ovvero quelle delle quali vogliamo capire ed eliminare l'influenza dalle concentrazioni degli inquinanti, utilizzate nei nostri modelli sono state: la temperatura, le precipitazioni registrate, il numero di giorni passati dalle ultime precipitazioni, l'umidità relativa, la radiazione globale e direzione e velocità del vento. Inoltre sono state inserite anche il giorno dell'anno ed il giorno della settimana, due variabili temporali che potessero fare da proxy per gli andamenti tipici stagionali e settimanali (dovute alle maggiori attività antropiche, soprattutto nelle città, durante i giorni feriali) mostrati dalle concentrazioni di molti inquinanti. 
 
@@ -144,6 +155,7 @@ Gli alberi di decisione sono una tecnica valida poichè non fanno nessun tipo di
 
 Queste strutture, specialmente se le si lascia crescere liberamente in profondità, soffrono molto di un problema detto \textit{overfitting}, ovvero che i modelli ottenuti si adattano perfettamente ai dati utilizzati in fase di costruzione, ma quando poi si prova a verificare le loro prestazioni su dati nuovi risultano scarse, poichè le relazioni individuate dal modello risultano essere troppo contaminate da rumore presente in tali dati \cite{bramer2007avoiding}. Questo accade perchè, se non si pone un limite alle dimensioni degli alberi, gli algoritmi usati per crearli cercano di trattare in modo sempre più preciso ogni singolo caso contenuto nel set di dati usato in fase di costruzione, non riuscendo però a capire realmente quali siano le relazioni presenti nei dati.
 %\todo{atrent: interessante, andrebbe dettagliato un po' di più}
+%aggiunta spiegazione + bib
 
 Random Forest, grazie all'uso di un numero elevato di alberi di decisione (da qui il termine forest), ciascuno costruito a partire da un sottoinsieme estratto casualmente dai dati iniziali, riesce a controllare il problema dell'overfitting mantenendo però tutti i vantaggi già presenti per gli alberi di decisione e che quindi lo rendono un algoritmo che si adatta perfettamente al tipo di lavoro che vogliamo fare. Random Forest, infatti, non fa nessun tipo di assunzione sulla struttura dei dati e delle relazioni che intercorrono tra ciascuna variabile, che è un grosso vantaggio quando stiamo trattando un problema complesso come quello della dispersione di inquinanti in atmosfera. È inoltre capace di selezionare in modo automatico le variabili più importanti, che poi userà maggiormente nell'attività predittoria, senza però porre vincoli nè sul numero di grandezze utilizzate nè su eventuali relazioni che possono intercorrere tra ciascuna. Random Forest ha inoltre il vantaggio di poter utilizzare contemporaneamente sia variabili numeriche che categoriche, senza richiedere particolari pre-trattazioni come invece avviene con altri metodi. 
 
@@ -151,7 +163,9 @@ Random Forest ci permette di analizzare come ogni modello operi per fare delle s
 %\todo{termini inglesi (non assorbiti dall'italiano) vanno in corsivo}
 , che ci mostrano come cambiamenti nei valori di una singola variabile influenzino le previsioni fatte dal modello. Questi sono strumenti molto utili perchè ci permettono di studiare, oltre ai risultati forniti dal modello, anche come ci si sia arrivati potendo così approfondire le relazioni e le dinamiche individuate.
 
-Di ogni modello sono state valuate le prestazioni grazie all'uso della tecnica del validation set, una tecnica molto conosciuta che grazie all'utilizzo di una parte dei dati iniziali, che viene sottratta casualmente a quelli usati per creare il modello, permette di verificare quanto siano precise le previsioni fatte da un modello confrontandole con valori reali.  %\todo{atrent: è automatica o devi scegliere tu il subset?}
+Di ogni modello sono state valuate le prestazioni grazie all'uso della tecnica del validation set, una tecnica molto conosciuta che grazie all'utilizzo di una parte dei dati iniziali, che viene sottratta casualmente a quelli usati per creare il modello, permette di verificare quanto siano precise le previsioni fatte da un modello confrontandole con valori reali.  
+%\todo{atrent: è automatica o devi scegliere tu il subset?}
+%aggiunta specifica
 
 L'algoritmo Random Forest permette di personalizzare alcuni aspetti del suo funzionamento per cercare di ottimizzarne le performance grazie all'uso di alcuni iperparametri, che vanno settati prima della creazione del modello e ne determinano le regole da applicare in tale fase. Una delle prime attività svolte, dopo aver verificato che fosse effettivamemte possibile utilizzare Random Forest per ottenere la normalizzazione meteorologica, è stata proprio una ricerca per individuare i valori migliori da assegnare ai diversi iperparametri in modo da ottenere il miglior compromesso possibile tra performance e affidabilità. Il numero di alberi creato in ciascuna foresta è stato di 300, la profondità massima di ogni singolo albero è stata fissata a 20 ed il numero di variabili da utilizzare per creare le condizioni presenti nei nodi intermedi a 5.
 
@@ -165,6 +179,7 @@ Ripetendo questo passaggio per tutti i giorni di una serie e per diversi inquina
 
 Fondamentale per il funzionamento della nostra tecnica era aver a disposizione molti dati, sia per quanto riguarda le serie delle concentrazioni di inquinante che per le variabili meteorologiche scelte. ARPA Lombardia, che da anni si occupa di monitoraggio dell'aria su tutto il territorio regionale, grazie alla sua vasta rete di rilevazione raccoglie tutte queste misure, che sono poi rese disponibili per il libero download
 %\todo{atrent: non è sempre stato così, ho fatto scraping per anni, solo nel 2017 hanno pubblicato i dati, forse varrebbe la pena citare \url{https://www.researchgate.net/publication/262565583_Lombardy_EPA_Obtorto_Collo_Data_and_Anti-pollution_Policies_Fallacies}}
+%aggiunta citazione ai problemi avuti in passato
  da parte di chiunque \cite{arpa_aria, arpa_meteo}. Mettere questi dati a disposizione dei cittadini, favorendone la loro fruizione, permette ad ognuno di poter fare delle valutazioni sia sulla reale qualità dell'aria che si respira tutti i giorni che sull'operato degli enti governativi, acquisendo una miglior conoscenza su un tema molto delicato e discusso. In tal senso l'apertura di ARPA Lombardia, che dal 2017 ha semplificato l'accesso ed il download dei dataset, è fondamentale e ha segnato una svolta rispetto ad un passato in cui la fruizione non era certamente facilitata \cite{trentini2014lombardy}. 
 In assenza di questi dati non sarebbe possibile fare analisi di questo tipo, poichè per imparare le diverse relazioni tra le variabili in gioco i nostri modelli hanno per forza bisogno di grandi quantità di informazioni, che possano descrivere tutte le diverse situazioni riscontrabili nella realtà.
 
@@ -174,9 +189,11 @@ Tutto il lavoro di raccolta ed analisi dei dati è stato fatto utilizzando il li
 
 
 %\todo{atrent: mi pare manchi in generale una descrizione dettagliata del metodo usato, in modo da rendere riproducibile il processo}
+%aggiunta descrizione dettagliata (penultimo paragrafo)
 
 
 %\todo{atrent: mi pare non ci siano citate e plottate tutte le soglie, intendo dappertutto}
+%le soglie sono citate e plottate nelle analisi introduttive, nelle altre non ho continuato a riportarle 
 
 
 \chapter{La situazione in Lombardia}
@@ -202,7 +219,9 @@ Alle variabili legate alle precipitazioni, ovvero la quantità registrata e il n
 \end{figure}
 
 \section{$NO_x$ e $NO_2$}
-Nella categoria degli ossidi di azoto sono considerati due inquinanti di diverso interesse e che quindi è bene analizzare separatamente. Il monossido di azoto, infatti, alle concentrazioni tipiche misurate non risulta pericoloso nè per la salute umana nè per la vegetazione; il biossido di azoto, invece, desta sicuramente una maggior preoccupazione per i suoi effetti sulla salute. Per questo motivo sono state considerate ed analizzate separatamente le serie dei sensori misuratori di $NO_x$ e di quelli dedicati solo al biossido \cite{world2006air}.%\todo{bib!}
+Nella categoria degli ossidi di azoto sono considerati due inquinanti di diverso interesse e che quindi è bene analizzare separatamente. Il monossido di azoto, infatti, alle concentrazioni tipiche misurate non risulta pericoloso nè per la salute umana nè per la vegetazione; il biossido di azoto, invece, desta sicuramente una maggior preoccupazione per i suoi effetti sulla salute. Per questo motivo sono state considerate ed analizzate separatamente le serie dei sensori misuratori di $NO_x$ e di quelli dedicati solo al biossido \cite{world2006air}.
+%\todo{bib!}
+%aggiunto bib
 
 Inizialmente sono state analizzate le serie degli ossidi di azoto. Quando si considerano questi inquinanti è bene ricordare che il monossido ha principalmente origine primaria, mentre il biossido si genera in atmosfera grazie all'ossidazione del primo e quindi ha origine principalmente secondaria. All'emissione, infatti, si stima che il biossido sia circa il 5-10\% del totale per questa categoria \cite{arpa2018rapporto}.  
 Entrambi sono emessi in atmosfera da processi di combustione ad alta temperatura (impianti di riscaldamento, motori dei veicoli, combustioni industriali, centrali di potenza, ecc..) e per ossidazione dell'azoto presente in atmosfera (o dei suoi composti contenuti nei combustibili utilizzati). Il biossido di azoto, oltre che alla pericolosità per quanto riguarda la salute di persone e vegetazione, ha un ruolo fondamentale nella formazione dello smog fotochimico in quanto è l'intermediario per la produzione di inquinanti secondari come l'ozono.
@@ -254,6 +273,7 @@ Sulle medie annuali, riportate in figura \ref{fig:nox_medie_annuali} vengono sic
 
 Guardando
 %\todo{atrent: in generale attenzione a queste affermazioni, vanno poi sostanziate con dei "conti", inoltre fai sempre riferimento a figure specifiche, con 'ref'}
+%aggiunte ref e quantificato cambiamenti
  i grafici \ref{fig:nox_medie_mensili}, \ref{fig:nox_medie_annuali} si vede chiaramente che l'andamento delle concentrazioni dal 2006 ad oggi sia abbastanza costante, con un aumento di $12\mu g/m^3$ (corrispondente al 18\%) registrato sulla serie normalizzata tra gli anni 2012 e 2016, seguito però poi da un costante calo che ormai le ha riportate ai livelli di 8 anni fa. Se avessimo avuto a disposizione le serie complete a partire dai primi anni 90 sicuramente avremmo visto un trend negativo nelle concentrazioni, poichè è stato proprio in quel decennio che le emissioni sono state maggiormente ridotte. Negli ultimi anni non sono state introdotte nuove importanti normative a riguardo, se non aggiornamenti dei limiti imposte da quelle già esistenti (sia per quanto riguarda le emissioni degli impianti che dei veicoli). Questo sicuramente ha aiutato a mantenere le concentrazioni su un livello abbastanza costante, nonostante il numero di veicoli circolanti e le attività produttive siano in continuo aumento.
 
 Successivamente ci siamo occupati del biossido di azoto misurato singolarmente. Per le concentrazioni di questo inquinante il D.Lgs 155/2010 ha stabilito le seguenti soglie: 200$\mu g/m^3$ sulla media oraria, con un massimo di 18 superamenti annui concessi, e di 40$\mu g/m^3$ per la media annua. Se il limite orario non viene praticamente mai superato, quello della media annua non sempre viene rispettato. Nel rapporto di ARPA Lombardia \cite{arpa2018rapporto} per quanto riguarda la provincia milanese, nel 2018, 7 stazioni su 14 hanno fatto registrare una media annuale superiore al limite imposto.
@@ -307,6 +327,7 @@ Le polveri sottili sono sicuramente l'inquinante più discusso degli ultimi anni
 Il particolato classicamente viene diviso in due categorie: PM10 e PM2.5, a seconda del diametro aerodinamico delle particelle esaminate. Quindi particelle con questo diametro, che non si riferisce alla dimensione della particella ma alla sue caratteristiche aerodinamiche
 \footnote{Il diametro aerodinamico di una particella è, per definizione, il diametro di una particella perfettamente sferica, di densità unitaria (1$g/cm^3$), che ha le stesse caratteristiche inerziali, overro che si deposita su un supporto alla stessa velocità}
 %\todo{spiegare, magari con footnote}
+%aggiunta footnote
 , al di sotto dei 10$\mu$m sono classificate come PM10 e il discorso analogo vale anche per il PM2.5. Essendo appunto particelle molto piccole risultano quindi pericolose per la salute poichè riescono a penetrare più a fondo nell'apparato respiratorio, arrivando quindi ad arrecare danni maggiori. La pericolosità del particolato non deriva solamente dalla sua composizione, che è molto varia per le diverse origini che può avere, ma anche dal fatto che fa da veicolante per altri inquinanti più pericolosi, che si legano in atmosfera e vengono poi trasportate all'interno del corpo dalla particella. Questo inquinante ha appunto origini molto varie, sia di tipo primario da attività come le industrie, i riscaldamenti, il traffico e le combustioni in generale, ma anche di tipo secondario, poichè in atmosfera può formarsi a seguito di trasformazioni chimico-fisiche di altre sostanze.
 
 Secondo INEMAR 2017 \cite{inemar2017}
@@ -361,6 +382,7 @@ Importante notare come successivamente al 2012 le concentrazioni normalizzate si
 Ancora una volta vediamo come le serie normalizzate ottenute mantengano un andamento medio rispetto ai dati grezzi, a conferma nuovamente della validità dei risultati ottenuti tramite questa tecnica.
 Guardando i grafici nelle figure \ref{fig:pm10_medie_mensili}, \ref{fig:pm10_medie_annuali} si nota come nel corso degli ultimi anni si possa aver raggiunto una sorta di limite
 %\todo{va dimostrato numericamente! il "sembra" stona}
+%migliorata spiegazione
 , dovuto dalla quantità di attività antropiche (e in parte probabilmente anche da un fondo naturale) presenti nella nostra regione, oltre il quale sarà più complicato scendere ulteriormente senza radicali cambiamenti che riescano ad eliminare alcune delle principali fonti emissive. Infatti, se a partire dal 2004 la media annuale della serie normalizzata è calata costantemente di anno in anno, dal 2014 in poi i valori si sono stabilizzati sui 30$\mu g/m^3$. Dalla serie ottenuta si capisce che mediamente la situazione per quanto riguarda questo inquinante non è critica, poichè con condizioni climatiche medie le concentrazioni sarebbero sempre sotto ai limiti legislativi. A causare i superamenti, che avvengono quasi tutti nei mesi invernali, sono invece le condizioni climatiche sfavorevoli di quei mesi che, unitamente all'uso dei riscaldamenti domestici ed in generale ad un maggior consumo energetico, portano il particolato ad accumularsi in atmosfera senza riuscire a disperderlo.
 
 \todo{atrent: da qualche parte definisci cosa si intende con "fondo naturale" e come si possa misurare? con refbib intendo}
@@ -406,6 +428,7 @@ Allo stesso modo abbiamo trattato il PM2.5, per il quale ricordiamo che il limit
 
 Anche per questo inquinante viene evidenziato un trend negativo leggermente minore di quanto riscontrato col PM10 e che negli ultimi anni presenta la stessa tendenza al rallentamento, rinforzando l'ipotesi
 %\todo{mai usare questa parola! meglio "ipotesi" che poi però va sostanziata con numeri}
+%sistemato e migliorato spiegazione
  di aver raggiunto un limite che per essere passato necessità di forti innovazioni che riescano ad eliminare le emissioni già alla fonte. Notiamo nuovamente come negli anni precedenti al 2014 le medie siano calate di anno in anno, per poi stabilizzarsi su un valore di 22$\mu g/m^3$ negli anni successivi.
 Abbiamo notato come dal 2015 le concentrazioni normalizzate siano riuscite anche a scendere sotto al limite di legge imposto e come, anche in questo caso, siano fortemente influenzate dalle condizioni sfavorevoli che poi portano spesso ad avere episodi problematici.
 
@@ -422,6 +445,7 @@ Il limite di legge alle concentrazioni di questa sostanza in atmosfera è fissat
 Pur non essendo più un problema abbiamo ritenuto che potesse comunque valer la pena di analizzare la situazione anche per quanto riguarda questo inquinante, ripetendo quanto fatto in precedenza per gli altri.
 
 %\todo{in generale, varrebbe la pena riportare la tabellina dei risultati del random forest per ogni inquinante?}
+%aggiunte tabelle importanza variabili per ogni inquinante
 \begin{table}[h!]
 \centering
 \begin{tabular}{ |c c| }
@@ -463,6 +487,7 @@ Nei modelli la temperatura è risultata essere la variabile con l'importanza mag
 Dal 2006 ad oggi le concentrazioni di monossido di carbonio sono rimaste piuttosto stabili, mostrando un andamento abbastanza costante, con un leggero aumento tra il 2010 e il 2014, seguito poi però da una fase di leggero calo. Questo andamento, che risulta praticamente costante e caratterizzato da variazioni piuttosto casuali, può sicuramente farci pensare di essere vicini alla misura del fondo naturale per questo inquinante, che ormai da anni non rappresenta più un problema.
 Va infatti notato come nel periodo preso in esame i valori normalizzati
 %\todo{assoluti o normalizzati?}
+%specificato
  siano sempre rimasti sotto al 1 $\mu g/m^3$, ben più bassi del limite imposto dalla legge. Inoltre le medie delle serie normalizzate seguono abbastanza bene quelle delle concentrazioni reali, facendoci quindi pensare che le fluttuazioni possano essere più oscillazioni nel valore del fondo naturale che cambiamenti dovuti ad attività umane o altri fattori come quelli considerati dal nostro modello.
 
 \section{Ozono}
@@ -614,6 +639,7 @@ Nei grafici in figure \ref{fig:benzene_medie_mensili}, \ref{fig:benzene_medie_an
 \section{SO2}
 Sebbene una volta fosse sicuramente uno degli inquinanti a destare più proccupazioni, così come è stato uno dei primi ad essere monitorato e limitato per legge, è già ormai diversi anni che le concentrazioni di biossido di zolfo sono ampiamente sotto al limite legislativo per questo inquinante (350 $\mu g/m^3$ media oraria), visto che a partire dagli anni 90 sono state introdotte una serie di normative atte a limitarne le emissioni. Le più importanti sono sicuramente quelle riguardanti gli usi di gasolio e nafta come forme di riscaldamento, che ormai sono stati quasi
 %\todo{quasi}
+%sistemato
  completamente sostituiti dal metano, e quelle che nel corso degli anni hanno progressivamente abbassato il limite di zolfo che può essere contenuto nei carburanti (da 0.8\% nel 1980 a 0.2\% nel 1995 e infine a 0.1\% nel 2008).
 
 Sebbene non vi siano più preoccupazioni per quanto riguarda le concentrazioni di questa sostanza in atmosfera abbiamo ritenuto che fosse utile verificare anche con essa i risultati ottenuti tramite la nostra tecnica. 
@@ -658,6 +684,7 @@ La data è risultata di gran lunga la variabile più importante (0.41), con gior
 
 Come si può vedere nei grafici \ref{fig_so2_medie_mensili}, \ref{so2_medie_annuali} le concentrazioni di SO2 registrate sono ormai a livelli bassissimi, tanto da non destare più preoccupazioni. Come già ampiamente riconosciuto da diversi studi in materia \cite{iir2020, scolari2017evoluzione}
 %\todo{citare!!!}
+%aggiunto bib
  questo inquinante potrebbe essere arrivato al fondo naturale e non c'è motivo di preoccupazione per quanto riguarda la sua situazione attuale.
 
 \chapter{Effetti del traffico sui principali inquinanti atmosferici}
@@ -730,6 +757,7 @@ L'origine di questo calo potrebbe sicuramente essere in parte collegata i provve
 \section{PM10}
 Le polveri sottili sono sempre un inquinante molto discusso e che spesso viene (anche erroneamente) collegato al traffico. Secondo INEMAR 2017 \cite{inemar2017} il traffico risulta essere responsabile di meno del 25\% delle emissioni di PM10, mentre il settore principale risultano ancora essere le combustioni non industriali, specialmente per quanto riguarda i riscaldamenti a biomasse. Avendo una composizione molto varia è comunque difficile stabilire in modo preciso l'origine del particolato atmosferico e quindi quali siano le fonti di maggiori emissioni.
 %\todo{parziali ripetizioni con roba sopra, corretto?}
+%sistemato ripetizioni
 
 Negli ultimi anni c'è stata molta attenzione riguardo a questo inquinante, specialmente per gli effetti che ha sulla salute umana.
 Questo ha quindi portato anche molto interesse nella ricerca di soluzioni efficaci per il loro contenimento, che per quanto riguarda il traffico sono state individuate nell'uso di filtri antiparticolato che riducano le emissioni al tubo di scappamento. 
@@ -752,9 +780,11 @@ L'algoritmo random forest ha il grande vantaggio di poter sempre provare ad intr
 Per indagare ulteriormente sugli effetti del traffico sulle concentrazioni degli inquinanti abbiamo quindi provato ad introdurre una variabile che tracci appunto il numero di veicoli circolanti, in modo da costruire dei modelli che siano in grado di eliminarne l'influenza dalle concentrazioni, portando tutte le giornate della serie storica ad una condizione di traffico medio in maniera analoga a quanto fatto con tutte le altre misure predittrici scelte.
 Per fare questo sono venuti in nostro soccorso i dataset \cite{areac2012, areac2013, areac2014, areac2015, areac2016, areac2017, areac2018, areac20192020}
 %\todo{quando dici 'dataset' devi sempre mettere il riferimento a quelli che hai usato}
+%aggiunti riferimenti
  pubblicati dal comune di Milano con le registrazioni degli ingressi in AreaC. Tramite un apposito script
-\todo{poi lo trovo in appendice? in generale tutto il codice andrebbe pubblicato, indicando qui il repo o anche includendolo in appendice}
-\todo[color=green]{mbelotti: aggiungero il riferimento nell'introduzione}
+%\todo{poi lo trovo in appendice? in generale tutto il codice andrebbe pubblicato, indicando qui il repo o anche includendolo in appendice}
+%\todo[color=green]{mbelotti: aggiungero il riferimento nell'introduzione}
+%aggiunta citazione sopra
  abbiamo quindi recuperato i dati anche di tale dataset, organizzati in appositi file e usati poi nella preparazione dei dati su cui basare la costruzione del nostro modello. Cosi facendo abbiamo ottenuto un modello in grado di eliminare l'effetto del traffico dalle concentrazioni, restituendoci una serie che rappresenti quale sarebbe stata la concentrazione in una giornata con condizioni meteorologiche, stagionali e del traffico medie. Questa serie potrà poi essere confrontata con quelle generate dai modelli creati senza la variabile del traffico per cercare possibili discrepanze, che potrebbero appunto indicarci come l'effetto del traffico abbia pesato sulle concentrazioni registrate in tali periodi.
 
 \begin{figure}[h]
@@ -822,7 +852,6 @@ Le stesse prove, effettuate con la creazione di un modello per la trattazione ch
 
 Anche se l'aumento rilevato al raddoppiare del traffico non è sicuramente consistente come quelli riguardanti gli ossidi di azoto, anche in questo caso possiamo notare come il nostro modello associ una crescita delle concentrazioni al crescere del traffico. 
 
-%inserisci grafico
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.75\textwidth]{co_areac}
@@ -882,6 +911,7 @@ Abbiamo iniziato le nostre analisi trattando gli ossidi di azoto che, viste le l
 Guardando il grafico delle concentrazioni misurate\ref{fig:nox_covid} si nota chiaramente il calo delle concentrazioni classico dei mesi primaverili, causato proprio dalle condizioni più favorevoli alla dispersione. Tale calo, chiaramente, risulta invece eliminato quando si considerano le serie normalizzate (grafico\ref{fig:nox_covid_norm}).
 Guardando sia i grafici delle concentrazioni reali che quello delle serie normalizzate si osserva come nei mesi di lockdown le concentrazioni abbiano subito un discreto ribasso, di circa il 20\%, rispetto agli anni precedenti, sicuramente dovuto al forte blocco del traffico e di alcune attività produttive.
 %\todo{atrent: beh "importante" è una parola grossa ;) stiamo parlando di un inquinante in calo negli anni, hai fatto una media 2015-2019 per cui hai preso dei valori circa del 2017 e li sta confrontando col 2020, il calo risulta di circa una decina di punti su 80, quindi un 12\%, probabilmente confrontando col solo 2019 sarebbe stato intorno al 10\%,  afronte di un lockdown totale...}
+%aggiunto valore percentuale del ribasso
 
 \subsection{$NO_2$}
 Abbiamo verificato anche i dati relativi al biossido di azoto, aspettandoci comunque di ottenere risultati abbastanza simili a quelli visti sugli ossidi trattati nel loro complesso.
@@ -908,8 +938,10 @@ Chiaramente una misura così restrittiva non è sicuramente applicabile in modo 
  impatto sulle concentrazioni a differenza di quello che si era visto analizzando dei provvedimenti presi in particolari località, i cui effetti si sono rivelati minimi se non addirittura nulli.
 Interventi su larga scala che possano avere un'efficacia richiederanno investimenti sull'innovazione tecnologica, per poter arrivare ad avere una flotta di veicoli circolanti a sempre più basse emissioni, così come potrebbe essere sicuramente utile investire sullo sviluppo di motorizzazioni "pulite" come quella elettrica, anche se prima rimangono da risolvere importanti questioni di sostenibilità che al momento non gli consentono di competere come sostituti dei tradizionali motori a scoppio \cite{skonhoft2014norwegian, jones2019if}.
 %\todo{atrent: eviterei di dare appigli ai fautori dell'elettrico, specie dati i problemi infrastrutturali grossi per passare a tale tipo di trazione} 
+%aggiunto bib e spiegazione
 Chiaramente questo tipo di interventi richiedono tempo
 %\todo{atrent: se non le riassumi non dirlo} da risolvere,
+%i concetti principali sono trovabili in bib
  e ci dimostra come non sia possibile intervenire sugli inquinanti pensando di abbatterne le concentrazioni rapidamente e senza piani concreti sul medio e lungo termine.
 
 \section{PM10 e PM2.5}
@@ -933,6 +965,7 @@ Se da un lato, infatti, i cali di traffico e produzione industriale hanno sicura
 Per quanto riguarda la frazione più spessa del particolato (PM10) vediamo come le concentrazioni misurate si mantengano piuttosto in linea con quanto visto negli anni precedenti, con episodi come quello di fine Marzo in cui le concentrazioni hanno fatto registrare valori ben al di sopra del limite di legge, nonostante fossero già in vigore tutte le limitazioni imposte coi vari DPCM per il contenimento dei contagi.
 La serie normalizzata\ref{fig:pm10_covid_norm}, invece, evidenzia un 
 %\todo{atrent: userei il termine "trascurabile"}
+%sistemato
  calo trascurabile rispetto agli anni precedenti, che però potrebbe essere collegato al leggero trend decrescente che era già stato visto sulle serie normalizzate di questo inquinante.
 
 \begin{figure}[h]
@@ -957,6 +990,7 @@ Per quanto riguarda il particolato, quindi, nonostante la riduzione del traffico
 Questo ci mostra come effettivamente per trattare questi inquinanti, la cui origine è sicuramente varia e complessa, non si possano prendere provvedimenti riguardanti solamente un settore in particolare, come potrebbe essere il traffico, ma vanno pensati dei piani che riguardino tutte le fonti emissive.
 La presenza di un trend negativo per tutte e due le frazioni di particolato è sicuramente un'indicazione di come la strada dell'innovazione tecnologica, che negli ultimi anni sta coinvolgendo tutti i settori, come è necessario che succeda per poter pensare di agire efficacemente su un inquinante così complesso e di origini varie, sia quella giusta da percorrere nonchè l'unica che può portare ad avere risultati concreti. Si è visto infatti come, seppur il lockdown abbia drasticamente ridotto il numero di veicoli circolanti, questo non abbia portato a miglioramenti della situazione, ad ulteriore conferma di come non si possa accreditare il traffico come il principale responsabile delle emissioni di particolato.
 %\todo{atrent: quale strada? se quella delle limitazioni alla circolazione no grazie, se si parla del progresso tecnologico ok, va esplicitato meglio, lo dici dopo ma uno si potrebbe appigliare}
+%migliorata spiegazione
 
 \section{CO}
 Anche per quanto riguarda il monossido di carbonio il quadro emissivo è cambiato durante i mesi dell'epidemia, con l'importante riduzione del traffico che però anche in questo caso è stata bilanciata dal maggior uso dei riscaldamenti domestici. Traffico e combustioni non industriali, infatti, sono le due categorie maggiormente responsabili delle emissioni di questo inquinante in atmosfera.
@@ -977,9 +1011,11 @@ Anche per quanto riguarda il monossido di carbonio il quadro emissivo è cambiat
 
 Successivamente all'applicazione delle limitazioni tramite l'emanazione dei DPCM del mese di Marzo si nota come effettivamente le concentrazioni misurate di monossido di carbonio risultino essere leggermente minori rispetto a quelle degli anni precedenti\ref{fig:co_covid}. Tale differenza viene confermata anche dalle serie normalizzate, anche se bisogna ricordare che si tratta di differenze minime su valori già molto bassi.
 %\todo{atrent: metterei in prospettiva, aggiungi la linea di soglia e vedrai che sparisce la differenza ;)}
+%aggiunta soglia
 
 Le limitazioni imposte, quindi, potrebbero aver avuto qualche effetto sulle concentrazioni di monossido di carbonio, anche se ormai la situazione per questo inquinante non desta più particolari preoccupazioni
 %\todo{atrent: "non risulta essere critica in alcun modo", usa frasi meno eufemistiche se hai i numeri per dirlo}
+%sistemato
  e quindi c'è anche meno interesse nella ricerca di nuove misure di contenimento, visto che quelle già presenti risultano essere più che sufficientemente efficaci.
 
 \section{Benzene}
@@ -1001,9 +1037,11 @@ Il benzene è sicuramente un inquinante importante da analizzare in questo perio
 
 Anche per questo inquinante, così collegato al traffico, notiamo uno scostamento rispetto all'andamento degli anni precedenti del 20\% (0.2$\mu g/m^3$), compatibile
 %\todo{?} 
+%aggiunto valore (la compatibilità è nell'entità del calo, ~20%)
 con quello visto sugli ossidi di azoto.
 Questo scostamento, confermato anche dalle serie normalizzate, conferma come effettivamente il traffico influenzi le concentrazioni di questo inquinante e quindi come una sua riduzione abbia conseguentemente portato ad un abbassamento delle concentrazioni, anche se è importante ricordare che si sta parlando di valori ben al di sotto della soglia di legge (5$\mu g/m^3$ per la media oraria) e che pertanto non destano più proccupazioni per i possibili effetti sulla salute umana.
 %\todo{atrent: sì ma ribadisci sempre l'inutilità di guardare inquinanti AMPIAMENTE sotto soglia, non voglio che questo testo diventi un'arma per chi buole introdurre limitazioni, non ci devono essere appigli di sorta}
+%aggiunta precisazione
 
 Sebbene la situazione per quanto riguarda il benzene non desti preoccupazioni, visto che i livelli ormai sono ampiamente sotto alle soglie di legge, abbiamo visto come una riduzione del traffico abbia portato ad un ulteriore miglioramento della situazione per quanto riguarda questo inquinante, che è auspicabile venga portato avanti dall'innovazione tecnologica nel corso dei prossimi anni.
 
@@ -1047,6 +1085,7 @@ Vediamo come le concentrazioni per quest'anno si siano mantenute abbastanza in l
 
 Nonostante i grossi cambiamenti visti nei mesi di lockdown, quindi, l'ozono non risulta essere stato colpito da tali misure. Questo inquinante, considerate le sue complesse e varie origini, risulta quindi difficile da trattare e trovare misure per il suo contenimento è molto complesso. Si è comunque visto come un blocco generale delle attività non sia servito a migliorarne la situazione.
 %\todo{atrent: non è questione di "non essere sufficiente", è questione di "non c'entrare proprio un tubo"! è come dare un'aspirina a uno che si è rotto una gamba, se una azione NON ha effetto su un fattore non ha senso parlare di "sufficiente effetto" perché sembra che se lo inasprisci magari funziona... direi più che altro "non ha ALCUNA relazione con l'inquinante sotto osservazione"}
+%corretto
 
 \section{Ammoniaca}
 In ultimo andiamo a controllare l'andamento dell'ammoniaca, per la quale le serie normalizzate dei nostri modelli avevano individuato un andamento piuttosto fluttuante.

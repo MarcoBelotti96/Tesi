@@ -1,0 +1,39 @@
+intro veramente oscena
+
+"increasingly worsening" in realtà è esattamente il contrario
+
+"4.6 million people die each year from causes directly attributable to air pollution [2]" invece sono morti PREMATURE (è già nel titolo del paper citato!) mentre i "car crashes" sono morti vere!
+
+non c'entra inoltre NULLA il climate change che non è dovuto all'inquinamento ma semmai alla CO2 (che NON è un inquinante)
+
+i costi indicati per le stazioni di monitoraggio sono BASSISSIMI per una PA che voglia gestire una rete di sensori, si tratta in fondo di qualche centinaio di stazioni per regione!
+
+"vehicle" non è vero, come molti studi stanno dimostrando e come molti rapporti ufficiali (citare ARPA ecc.) stanno verbalizzando, la quota parte del traffico è ormai molto ridotta e difficilmente comprimibile come ha dimostrato il lockdown
+
+lo state of the art lo possiamo copiare parzialmente, citando correttamente i findings, non come fanno loro!
+
+loro fanno "As a case study, we combine three years of sensor and vehicle logs from the city of Milan, from 2013 to 2016", noi arriviamo fino al 2020
+
+copiamo anche la struttura, che cmq è standard
+
+noi usiamo i dati di tutta la regione e su uno span più ampio
+
+e, IMPORTANTE, noi prendiamo in considerazione il lockdown in cui si vede che cambia poco o nulla!!!
+
+vale la pena fare lo smoothing dei dati che hanno fatto loro?
+
+temperature risulta anche a loro
+
+figure 3, euro4 peggiore di euro0 su PM10?
+
+cosa vuol dire "authorized" vs. "non authorized"?!? indagare tutta la correlation matrix
+
+noi forniamo il sw usato, gli script, loro NO
+
+inoltre non citano un singolo url di un dataset!!!
+
+la descrizione della macchina è inutile e ininfluente, specie se non fornisci il tuo software
+
+plottare il CAQI nel corso degli anni per dimostrare che scende/sale
+
+conclusioni nostre (da tesi), data come predittore, ergo poco legato ad altri fattori, non si può NON avere sensori perché la situazione cambia nel tempo (tecnologie cambiano, MIGLIORANO, vedi grafici negli anni)

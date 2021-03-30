@@ -364,7 +364,6 @@ Sicuramente è importante notare che le medie annuali delle serie normalizzate r
 
 C'è inoltre da dire che nel corso dei prossimi anni questo inquinante potrebbe ulteriormente calare, poichè l'innovazione tecnologica, soprattutto per quanto riguarda il mondo delle auto e il rinnovo della flotta circolante porteranno ad avere ulteriori abbassamenti delle emissioni. Chiaramente ci si può aspettare di vedere un processo simile anche per quanto riguarda le combustioni industriali e civili, che sono gli altri due settori importanti per quanto riguarda questo inquinante e che potrebbero dare un buon contributo nel contenimento delle concentrazioni.
 
-\todo{atrent: FIN QUI rilettura, in realtà ho scorso i todo sotto segnalati come evasi per verificare che lo fossero}
 
 
 \section{PM10 e PM2.5}
@@ -374,13 +373,13 @@ Il particolato classicamente viene diviso in due categorie: PM10 e PM2.5, a seco
 \footnote{Il diametro aerodinamico di una particella è, per definizione, il diametro di una particella perfettamente sferica, di densità unitaria (1$g/cm^3$), che ha le stesse caratteristiche inerziali, ovvero che si deposita su un supporto alla stessa velocità.}
 %\todo{spiegare, magari con footnote}
 %aggiunta footnote
-, al di sotto dei 10$\mu$m sono classificate come PM10 e il discorso analogo vale anche per il PM2.5. Essendo appunto particelle molto piccole risultano quindi pericolose per la salute poichè riescono a penetrare più a fondo nell'apparato respiratorio, arrivando quindi ad arrecare danni maggiori. La pericolosità del particolato non deriva solamente dalla sua composizione, che è molto varia per le diverse origini che può avere, ma anche dal fatto che fa da veicolante per altri inquinanti più pericolosi, che si legano in atmosfera e vengono poi trasportate all'interno del corpo dalla particella. Questo inquinante ha appunto origini molto varie, sia di tipo primario da attività come le industrie, i riscaldamenti, il traffico e le combustioni in generale, ma anche di tipo secondario, poichè in atmosfera può formarsi a seguito di trasformazioni chimico-fisiche di altre sostanze.
+, al di sotto dei 10$\mu$m sono classificate come PM10 e il discorso analogo vale anche per il PM2.5. Essendo appunto particelle molto piccole risultano quindi pericolose per la salute poichè riescono a penetrare più a fondo nell'apparato respiratorio, arrivando quindi ad arrecare danni maggiori.\todo{atrent: in realtà potrebbero benissimo essere metabolizzate... cmq non voglio entrare in troppa polemica} La pericolosità del particolato non deriva solamente dalla sua composizione, che è molto varia per le diverse origini che può avere, ma anche dal fatto che fa da veicolante per altri inquinanti più pericolosi, che si legano in atmosfera e vengono poi trasportate all'interno del corpo dalla particella. Questo inquinante ha appunto origini molto varie, sia di tipo primario da attività come le industrie, i riscaldamenti, il traffico e le combustioni in generale, ma anche di tipo secondario, poichè in atmosfera può formarsi a seguito di trasformazioni chimico-fisiche di altre sostanze.
 
 Secondo INEMAR 2017 \cite{inemar2017}
 %\todo{bibitem}
  la categoria maggiormente responsabile per le emissioni di questi inquinanti sono le combustioni non industriali, quindi, ad esempio, i riscaldamenti domestici, specialmente quelli a biomasse. Il contributo di questa categoria si aggira intorno al 45\% per quanto riguarda il PM10 ed al 50\% per il PM2.5. Al secondo posto troviamo il traffico, con un contributo che arriva al 25\% per quanto riguarda la frazione più grossa del particolato e del 20\% per la più piccola. Per quanto riguarda i combustibili, il legno è di gran lunga il maggior responsabile delle emissioni di particolato, con oltre il 50\% del totale. Il diesel si ferma invece a solo circa il 10\%.
 
-Il PM10 è regolato dall'inizio degli anni 90, con i decreti già citati per gli ossidi di azoto che hanno introdotto limiti e nuove regolamentazioni per le emissioni degli impianti.Per quanto riguarda il settore del traffico l'introduzione più importante è stata quella del filtro antiparticolato nelle marmitte, che permette di ridurre drasticamente le emissioni, insieme chiaramente alle progressive limitazioni imposte tramite le categorie EuroX. 
+Il PM10 è regolato dall'inizio degli anni 90, con i decreti già citati per gli ossidi di azoto che hanno introdotto limiti e nuove regolamentazioni per le emissioni degli impianti. Per quanto riguarda il settore del traffico l'introduzione più importante è stata quella del filtro antiparticolato nelle marmitte, che permette di ridurre drasticamente le emissioni, insieme chiaramente alle progressive limitazioni alle emissioni imposte tramite le categorie EuroX. 
 Per quanto riguarda il traffico i motori a diesel sono sempre stati riconosciuti come produttori di particolato ed infatti sin dalle prime norme europee ne venivano limitate le emissioni, csoa che non avveniva invece per i motori a benzina, per i quali solo recentemente (a partire dalla categoria Euro 5a, approvata nel settembre 2009) sono state introdotte limitazioni per i motori a iniezione diretta, visto che negli ultimi anni c'è un sempre maggior interesse verso la loro produzione di particolato  \cite{Raza_2018}. 
 
 Per quanto riguarda il PM10 il D.Lgs 155/2010 impone i limiti di 50$\mu g/m^3$ come media giornaliera, che non deve essere superata in più di 35 occasioni all'anno, e 40$\mu g/m^3$ per la media annuale.
@@ -415,6 +414,8 @@ Nei modelli ottenuti per trattare questo inquinante la variabile più importante
 \caption{Confronto tra le medie mensili delle serie storiche rilevate dai sensori e quelle delle serie normalizzate}
 \label{fig:pm10_medie_mensili}
 \end{figure}
+
+\todo{atrent: mi è venuto in mente, spieghi da qualche parte il dettaglio della matematica della normalizzazione che applichi? è un memo per verificarlo}
 
 \begin{figure}[h]
 \centering
@@ -481,6 +482,7 @@ Anche per questo inquinante viene evidenziato un trend negativo leggermente mino
 di aver raggiunto un limite che per essere passato necessita di forti innovazioni che riescano ad eliminare le emissioni già alla fonte. Notiamo nuovamente come negli anni precedenti al 2014 le medie siano calate di anno in anno, per poi stabilizzarsi su un valore di 22$\mu g/m^3$ negli anni successivi.
 Abbiamo notato come dal 2015 le concentrazioni normalizzate siano riuscite anche a scendere sotto al limite di legge imposto e come, anche in questo caso, siano fortemente influenzate dalle condizioni sfavorevoli che poi portano spesso ad avere episodi problematici.
 
+
 \section{CO}
 Il monossido di carbonio è un inquinante molto pericoloso per la salute, in quanto è nota la sua migliore capacità di legarsi all'emoglobina rispetto all'ossigeno, causando notevoli danni per l'uomo \cite{kao2005carbon}.
 È un inquinante che viene prodotto da combustioni in difetto di ossigeno ed ha origine prevalentemente primaria, essendo emesso direttamente da tutti i processi di combustione incompleta dei composti carboniosi (gas naturali, propano, carburanti, benzine, carbone, legna, ecc..).
@@ -539,6 +541,7 @@ Va infatti notato come nel periodo preso in esame i valori normalizzati
 %specificato
  siano sempre rimasti sotto al 1 $\mu g/m^3$, ben più bassi del limite imposto dalla legge. Inoltre le medie delle serie normalizzate seguono abbastanza bene quelle delle concentrazioni reali, facendoci quindi pensare che le fluttuazioni possano essere più oscillazioni nel valore del fondo naturale che cambiamenti dovuti ad attività umane o altri fattori come quelli considerati dal nostro modello.
 
+
 \section{Ozono}
 L'ozono troposferico è un inquinante di origine secondaria, che si forma in atmosfera quando, favoriti da alte temperature e forte irraggiamento, ossidi di azoto e composti organici volatili subiscono trasformazioni chimico-fisiche che portano alla sua formazione. Per questo motivo l'ozono è considerato smog fotochimico ed il periodo critico per le sue concentrazioni, a differenza degli altri inquinanti, è quindi l'estate \cite{seinfeld1988ozone}.
 %\todo{vale ovunque: la citazione va prima del punto}
@@ -546,7 +549,7 @@ I precursori dell'ozono arrivano generalmente da combustioni civili ed industria
 
 L'ozono è noto per la sua pericolosità per l'apparato respiratorio, al quale può causare problemi temporanei anche a seguito di un'esposizione a basse concentrazioni; chiaramente se l'esposizione avviene in modo ripetuto o prolungato il rischio di avere dei danni permanenti aumenta. In generale comunque, soprattutto ad alte concentrazioni, l'ozono diventa pericoloso sia per gli esseri umani che per la vegetazione, sulla quale può avere effetti negativi.
 
-La normativa attuale fissa a 120 $\mu g/m^3$ il valore obbiettivo per la media mobile calcolata su 8 ore, con un massimo di 25 superamenti annui calcolati sulla media di 3 anni. Attualmente questo limite viene rispettato a fatica (nel 2018 nella provincia di Milano tutte le stazioni l'hanno abbondantemente superato), ma ciò comunque non costituisce una criticità per la regione, in quanto questi superamenti sono tutti collegati al classico andamento stagionale \cite{arpa2018rapporto}.
+La normativa attuale fissa a 120 $\mu g/m^3$ il valore obbiettivo per la media mobile calcolata su 8 ore, con un massimo di 25 superamenti annui calcolati sulla media di 3 anni. Attualmente questo limite viene rispettato a fatica (nel 2018 nella provincia di Milano tutte le stazioni l'hanno abbondantemente superato)\todo{atrent: dal grafico sembra sempre sotto}, ma ciò comunque non costituisce una criticità per la regione, in quanto questi superamenti sono tutti collegati al classico andamento stagionale \cite{arpa2018rapporto}.
 
 \begin{table}[h!]
 \centering
@@ -570,7 +573,7 @@ La normativa attuale fissa a 120 $\mu g/m^3$ il valore obbiettivo per la media m
 \label{table:importanza_o3}
 \end{table}
 
-Nei modelli ottenuti per la trattazione dell'ozono le due variabili nettamente più importanti si sono rivelate essere la radiazione (0.33) e la temperatura (0.32), dimostrando quindi che sono stati capaci di interpretare perfettamente le dinamiche che portano alla maggior formazione di questo inquinante \ref{table:importanza_o3}.
+Nei modelli ottenuti per la trattazione dell'ozono le due variabili nettamente più importanti si sono rivelate essere la radiazione solare (0.33) e la temperatura (0.32), dimostrando quindi che sono stati capaci di interpretare perfettamente le dinamiche che portano alla maggior formazione di questo inquinante \ref{table:importanza_o3}.
 
 \begin{figure}[h]
 \centering
@@ -591,11 +594,11 @@ L'andamento delle concentrazioni a partire dal 2013 è leggermente in aumento co
 Un aspetto da notare è che l'ozono, tra tutti gli inquinanti, è quello che la nostra tecnica riesce a trattare con la maggiore precisione ed infatti i modelli ottenuti usati per ricavare le serie normalizzate sono quelli che in fase di costruzione hanno mostrato le performance migliori. Questo probabilmente è collegato alla forte relazione che questo inquinante ha con la temperatura e, soprattutto, la radiazione solare, che i nostri modelli hanno ben individuato (come si è visto con l'importanza delle variabili) e che quindi gli permetteva di essere più precisi nell'attività predittoria.
 
 \section{Ammoniaca}
-L'ammoniaca è un inquinante prodotto da processi degradativi di sostanza organica, le cui principali sorgenti sono infatti attività agricole e, in misura minore, il traporto su strada e la combustione di legna e combustibili fossili. È un gas molto solubile in acqua e questo lo rende pericoloso poichè può essere causa dell'acidificazione dei suoli. Inoltre negli ultimi l'interesse per l'ammoniaca è sempre crescente a causa della sua partecipazione nella formazione di particolato secondario quando presente in atmosfera.
+L'ammoniaca è un inquinante prodotto da processi degradativi di sostanza organica, le cui principali sorgenti sono infatti attività agricole e, in misura minore, il traporto su strada e la combustione di legna e combustibili fossili. È un gas molto solubile in acqua e questo lo rende pericoloso poichè può essere causa dell'acidificazione dei suoli. Inoltre negli ultimi\todo{anni?} l'interesse per l'ammoniaca è sempre crescente a causa della sua partecipazione nella formazione di particolato secondario quando presente in atmosfera.
 
 Secondo INEMAR2017 in Lombardia il 96\% delle emissioni di questa sostanza sono collegabili al settore dell'agricoltura, che infatti è il principale responsabile per quanto riguarda questo inquinante. Il traffico, invece, arriva a dare un contributo pari solamente al 1\% del totale annuo.
 
-La normativa attuale non impone limiti per le concentrazioni registrate, anche se una serie di direttive europee per lo sviluppo rurale ha mirato, nel corso degli anni, a favorire la diffusione di buone pratiche per contenerne le emissioni, come ad esempio il divieto dello spargimento di liquami. 
+La normativa attuale non impone limiti per le concentrazioni registrate, anche se una serie di direttive europee per lo sviluppo rurale ha mirato, nel corso degli anni, a favorire la diffusione di buone pratiche per contenerne le emissioni, come ad esempio il divieto dello spargimento di liquami. \todo{atrent: ref sul divieto?}
 
 \begin{table}[h!]
 \centering
@@ -636,6 +639,7 @@ Nei modelli ottenuti la variabile più importante è risultata essere la data (0
 \end{figure}
 
 Come si vede nei grafici delle figure \ref{fig:ammoniaca_medie_mensili}, \ref{fig:ammoniaca_medie_annuali} l'andamento delle serie normalizzate ottenute rispecchia abbastanza fedelmente quello delle concentrazioni realmente misurate. Questa è quindi un'ulteriore dimostrazione di come l'influenza della meteorologia su questo inquinante sia praticamente nulla, visto che dopo averne teoricamente eliminato gli effetti si ottiene ancora una serie molto simile.
+
 
 \section{Benzene}
 Il benzene viene sintetizzato dal petrolio e viene usato per produrre materie plastiche e soprattutto come sostanza antidetonante nella benzina. Il benzene, infatti, ad inizio anni 90 ha sostituito il piombo come additivo presente in essa, permettendo il passaggio da quella rossa a quella verde.
@@ -731,10 +735,12 @@ La data è risultata di gran lunga la variabile più importante (0.41), con gior
 \label{fig:so2_medie_annuali}
 \end{figure}
 
-Come si può vedere nei grafici \ref{fig_so2_medie_mensili}, \ref{so2_medie_annuali} le concentrazioni di SO2 registrate sono ormai a livelli bassissimi, tanto da non destare più preoccupazioni. Come già ampiamente riconosciuto da diversi studi in materia \cite{iir2020, scolari2017evoluzione}
+Come si può vedere nei grafici \ref{fig_so2_medie_mensili}, \ref{so2_medie_annuali}\todo{non li risolve} le concentrazioni di SO2 registrate sono ormai a livelli bassissimi, tanto da non destare più preoccupazioni. Come già ampiamente riconosciuto da diversi studi in materia \cite{iir2020, scolari2017evoluzione}
 %\todo{citare!!!}
 %aggiunto bib
  questo inquinante potrebbe essere arrivato al fondo naturale e non c'è motivo di preoccupazione per quanto riguarda la sua situazione attuale.
+ 
+ 
 
 \chapter{Effetti del traffico sui principali inquinanti atmosferici}
 Avere a disposizione una tecnica che ci permette di eliminare l'influenza delle condizioni meteorologiche e della variabilità stagionale dalle concentrazioni degli inquinanti atmosferici ci permette di poter fare delle analisi più precise sull'efficacia di misure prese per contrastare l'inquinamento. L'andamento delle serie normalizzate, infatti, deve per forza essere causato da fattori non considerati nella loro generazione. Sicuramente i due più importanti sono: l'eventuale trend rilevato per le concentrazioni, che noi ovviamente non andiamo ad eliminare poichè è quello che ci interessa per monitorarne l'andamento, ed altri fattori che possono avere un'influenza e che non sono stati considerati, quindi ad esempio particolari situazioni in cui le emissioni antropiche sono state ridotte (COVID) o nuove normative messe in campo.
@@ -767,6 +773,8 @@ L'altra variabile che in tutti e tre i casi è stata riconosciuta come buon pred
 Dal grafico\ref{fig:nox_traffico} si nota innanzitutto come la serie di Bormio abbia davvero dei valori ridotti che ci mostrano come in località di questo tipo l'inquinamento da ossidi di azoto non sia sicuramente un problema.
 Un altro aspetto che risalta subito all'occhio è l'andamento pressochè identico delle serie relative a Milano e Limito, che mostrano entrambe come a partire dal 2016/2017 si sia registrato un trend decrescente praticamente compatibile tra le due stazioni. Analizzando solo la serie di Milano avremmo potuto pensare che questo calo potesse essere collegato alla riduzione del traffico causata dai provvedimenti presi, ma osservare lo stesso andamento anche su una stazione diversa e non colpita da tali limitazioni ci indica che la causa deve per forza essere un'altra. Una possibile idea è che l'origine di questo trend sia proprio nell'innovazione tecnologica, i cui risultati stanno finalmente mettendosi in mostra nonostante le sempre maggiori attività umane, portando a registrare un calo generale e non specifico di alcune località. A Bormio, dove sicuramente la densità di attività antropiche inquinanti è nettamente ridotta rispetto alle altre due stazioni, questo calo risulta chiaramente molto minore, sia appunto perchè gli effetti dell'innovazione possono essere meno evidenti a causa della minor applicazione che perchè le concentrazioni sono già molto ridotte e quindi è ancora più difficile far registrare dei cali consistenti.
 
+\todo{atrent: sarebbe utile un qqplot?}
+
 \subsection{$NO_2$}
 Per completezza è stato trattato anche il biossido di azoto, inquinante sempre molto collegato al traffico e attorno al quale c'è molto interesse per i possibili effetti sulla salute umana.
 
@@ -787,7 +795,7 @@ Per quanto riguarda gli ossidi di azoto i nostri modelli sembra che effettivamen
 \section{CO}
 Per quanto riguarda il monossido di carbonio INEMAR 2017 individua trasporto su strada e combustioni non industriali (quindi i riscaldamenti, in particolare quelli alimentati a biomasse) come le due principali fonti emissive, con un percentuale di circa il 60\% del totale.
 
-La situazione per quanto riguarda questo inquinante non risulta essere critica, visto che le concentrazioni registrare sono ormai prossime a valori riconducibili al fondo naturale. Nonostante ciò abbiamo ritenuto fosse comunque utile fare un'analisi di questo tipo, sia per verificare eventuali effetti dei provvedimenti di limitazione al traffico presi, che per provare a cercare eventuali differenze tra le serie delle tre località. In questo caso risulta particolarmente interessante indagare anche su quella di Bormio, poichè è una zona in cui la legna viene ancora molto usata come forma di riscaldamento e quindi si possono indagare su quali siano gli effetti di questi "comportamenti".
+La situazione per quanto riguarda questo inquinante non risulta essere critica, visto che le concentrazioni registrare sono ormai prossime a valori riconducibili al fondo naturale. Nonostante ciò abbiamo ritenuto fosse comunque utile fare un'analisi di questo tipo, sia per verificare eventuali effetti dei provvedimenti di limitazione al traffico presi, che per provare a cercare eventuali differenze tra le serie delle tre località. In questo caso risulta particolarmente interessante indagare anche su quella di Bormio, poichè è una zona in cui la legna viene ancora molto usata come forma di riscaldamento e quindi si possono indagare su quali siano gli effetti di questi ``comportamenti''.\todo{atrent: mi raccomando le virgolette, si fanno così in \LaTeX}
 
 La variabile con importanza maggiore nei tre modelli è stata la temperatura (0.20 a Milano, 0.34 a Limito e 0.19 a Bormio), che gli permette proprio di cogliere l'andamento tipicamente stagionale di questo inquinante. Inoltre, essendo derivante in buona parte dai riscaldamenti domestici, è abbastanza evidente come tale misura possa essere utilizzata per stimarne un loro utilizzo e quindi riuscire a fare previsioni più precise e che sappiano fare da proxy anche questo aspetto.
 La velocità del vento, chiaramente, ha ottenuto ancora una buona importanza, che ci conferma nuovamente la forte azione dispersiva di questo elemento.
@@ -872,7 +880,7 @@ In figura \ref{fig:nox_part_dep} è riportato il partial dependence plot della v
 
 A primo impatto si nota subito come le due serie siano sempre praticamente equivalenti, mantenendo lo stesso andamento. Si nota anche, però, come per il 2020 le due serie mostrino andamenti molto diversi, con una differenza di circa 10 $\mu g/m^3$ sulle concentrazioni previste.
 Come avevamo visto in precedenza è proprio nel 2020 che il traffico ha fatto registrare un importante calo, dovuto alle misure per il contenimento dei contagi da COVID, e si nota chiaramente come in corrispondenza di questo calo le previsioni dei due modelli siano discordanti.
-Da un lato si vede come il modello costruito senza l'uso del numero di ingressi registrati in Area C abbia effettivamente rilevato un calo abbastanza importante nelle concentrazioni misurate, dovuto proprio alla diminuzione del traffico. Dall'altro si vede invece come il modello costruito usando anche i dataset di Area C non rilevi questa differenza, continuando a mantenere un andamento in linea col trend decrescente di questi ultimi anni. Questo modello, infatti, essendo stato costruito utilizzando anche i dati sul traffico è capace di eliminarne l'influenza (e ciò avviene sia in condizioni di traffico al di sopra che al di sotto della media) e rapportando i dati dei mesi della primavera 2020 a condizioni di traffico medie ha eliminato il calo rilevato in precedenza. Questo ci dà ulteriormente conferma dell'origine da attribuire a tale calo ed inoltre ci dà una stima di come mediamente potrebbero cambiare le concentrazioni se venisse completamente (o quasi, proprio come è successo nei mesi di lockdown) eliminato il traffico veicolare privato.
+Da un lato si vede come il modello costruito senza l'uso del numero di ingressi registrati in Area C abbia effettivamente rilevato un calo abbastanza importante nelle concentrazioni misurate, dovuto proprio alla diminuzione del traffico. Dall'altro si vede invece come il modello costruito usando anche i dataset di Area C non rilevi questa differenza, continuando a mantenere un andamento in linea col trend decrescente di questi ultimi anni. Questo modello, infatti, essendo stato costruito utilizzando anche i dati sul traffico è capace di eliminarne l'influenza (e ciò avviene sia in condizioni di traffico al di sopra che al di sotto della media) e rapportando i dati dei mesi della primavera 2020 a condizioni di traffico medie ha eliminato il calo rilevato in precedenza. Questo ci dà ulteriormente conferma dell'origine da attribuire a tale calo ed inoltre ci dà una stima di come mediamente potrebbero cambiare le concentrazioni se venisse completamente (o quasi, proprio come è successo nei mesi di lockdown) eliminato il traffico veicolare privato.\todo{atrent: espliciterei il ``valore'' di questo calo: 10\% di guadagno emissivo a fronte di un lockdown totale!}
 
 Per quanto riguarda gli $NO_x$ abbiamo quindi dimostrato come effettivamente anche i nostri modelli siano in grado di individuare l'influenza del traffico sulle concentrazioni e abbiamo provato anche a quantificare il possibile miglioramento della qualità dell'aria che si otterrebbe eliminandolo completamente.
 Un'altra nota da fare è che i modelli creati utilizzando anche i dati degli ingressi in Area C individuano comunque lo stesso trend decrescente nelle concentrazioni già visto in precedenza, mostrandoci quindi come questo andamento non sia associabile al volume del traffico, ma che le sue cause siano da ricercare altrove. Questa è un'ulteriore conferma di come l'innovazione tecnologica sia il maggior responsabile del miglioramento delle concentrazioni di questo inquinante, oltre che al modo più efficace per la loro riduzione.
@@ -928,7 +936,6 @@ Vediamo infatti come le due serie rimangano praticamente sempre equivalenti, non
 
 Per quanto riguarda le polveri sottili, quindi, il nostro metodo non rileva una particolare influenza dell'andamento del traffico sulle concentrazioni registrate, nemmeno a seguito di un calo del volume come quello che è avvenuto nel lockdown, mostrandoci ancora una volta come le fonti emissive più influenti per questi inquinanti non siano i veicoli a motore.
 
-
 \chapter{Effetti del lockdown per il Covid-19 sulle concentrazioni degli inquinanti}
 I mesi primaverili del 2020 sono stati caratterizzati dalla diffusione dell'epidemia di Covid-19 e dalle importanti misure prese per il suo contenimento. Queste limitazioni hanno portato ad avere un quadro emissivo eccezionale per gli inquinanti atmosferici, che difficilmente si sarebbe potuto verificare in condizioni normali. Questi mesi, infatti, sono stati caratterizzati da importanti limitazioni sugli spostamenti e alle attività produttive, quindi rappresentano un importante banco di prove per verificare come siano cambiate le concentrazioni degli inquinanti in atmosfera con una così drastica riduzione delle attività antropiche, dandoci la possibilità di valutare come effettivamente si potrebbe intervenire per ottenere ulteriori miglioramenti della qualità dell'aria.
 
@@ -957,7 +964,7 @@ Abbiamo iniziato le nostre analisi trattando gli ossidi di azoto che, viste le l
 \label{fig:nox_covid_norm}
 \end{figure}
 
-Guardando il grafico delle concentrazioni misurate\ref{fig:nox_covid} si nota chiaramente il calo delle concentrazioni classico dei mesi primaverili, causato proprio dalle condizioni più favorevoli alla dispersione. Tale calo, chiaramente, risulta invece eliminato quando si considerano le serie normalizzate (grafico\ref{fig:nox_covid_norm}).
+Guardando il grafico delle concentrazioni misurate \ref{fig:nox_covid} si nota chiaramente il calo delle concentrazioni classico dei mesi primaverili, causato proprio dalle condizioni più favorevoli alla dispersione. Tale calo, chiaramente, risulta invece eliminato quando si considerano le serie normalizzate (grafico \ref{fig:nox_covid_norm}).
 Guardando sia i grafici delle concentrazioni reali che quello delle serie normalizzate si osserva come nei mesi di \textit{lockdown} le concentrazioni abbiano subito un discreto ribasso, di circa il 20\%, rispetto agli anni precedenti, sicuramente dovuto al forte blocco del traffico e di alcune attività produttive.
 %\todo{atrent: beh "importante" è una parola grossa ;) stiamo parlando di un inquinante in calo negli anni, hai fatto una media 2015-2019 per cui hai preso dei valori circa del 2017 e li sta confrontando col 2020, il calo risulta di circa una decina di punti su 80, quindi un 12\%, probabilmente confrontando col solo 2019 sarebbe stato intorno al 10\%,  afronte di un lockdown totale...}
 %aggiunto valore percentuale del ribasso
@@ -1158,7 +1165,6 @@ Questo calo probabilmente deriva da una minor attività anche per quanto riguard
 
 Visto il forte collegamento tra questo inquinante e l'agricoltura qualsiasi misura di contenimento delle concentrazioni dovrà necessariamente agire su tale settore, poichè effettivamente con un calo dell'attività si è notato anche un calo nelle concentrazioni rilevate.
 
-\todo{atrent fin qui, questa la leggerò più avanti, a valle di tutto}
 \chapter{Conclusioni}
 Nelle nostre analisi abbiamo dimostrato come sia possibile applicare l'algoritmo Random Forest per eliminare l'influenza della meteorologia dalle serie dei principali inquinanti atmosferici, in modo da poterne analizzare l'andamento e le variazioni in modo più preciso.  
 Controllare l'influenza della meteorologia in analisi di questo tipo è fondamentale, poichè la sua influenza risulta per la maggior parte delle volte essere maggiore di quella che possono avere limitazioni o particolari eventi che possono modificare le concentrazioni di inquinanti presenti in atmosfera. Random Forest, così come molte altre tecniche del mondo del machine learning, si adattano perfettamente a questo tipo di modellazione e permettono di ottenere dei risultati validi ed affidabili, facendo affidamento sulla capacità di calcolo dei calcolatori moderni.  

@@ -139,7 +139,10 @@ Nel capitolo 4 verranno presentate le analisi svolte sull'influenza del traffico
 %marco: PM10 e PM2.5 di solito sono riportati così, senza subscript. Aggiunto per le formule chimiche tipo NOx, O3, ecc..}
 Nel capitolo 5 verrà presentata un'analisi del periodo di diffusione dell'epidemia di Covid-19 e di quali siano stati gli effetti del conseguente \textit{lockdown} svoltosi nei mesi di marzo ed aprile sulle concentrazioni.
 
-\todo{atrent: inserire ref all'articolo osceno e commentarlo?}
+Nell'appendice finale, inserito a seguito della lettura di un articolo \cite{app10134587} che ha utilizzato alcune tecniche di Machine Learning, tra cui anche Random Forest, ed i nostri stessi dataset per provare a fare previsioni sulla qualità dell'aria della città di Milano, è presentata una verifica fatta sulla validità nel corso degli anni dei modelli creati.
+
+\todo{atrent: inserire ref all'articolo osceno e commentarlo?
+mbelotti: aggiunto appendice in fondo al testo (prima delle conclusioni)}
 
 \chapter{Normalizzazione meteorologica utilizzando Random Forest}
 L'atmosfera è lo strato gassoso che ricopre esternamente la terra come un involucro ed è costituita principalmente da azoto e ossigeno, mescolati con piccole quantità di altri gas e pulviscolo. La porzione più bassa, che sta a diretto contatto col suolo, è definita strato limite planetario (Planetary Boundary Layer, o PBL, in inglese) e sia la sua struttura che l'evoluzione hanno influenze fondamentali sul comportamento degli inquinanti atmosferici di maggior interesse \cite{dina2009concentrazione}.  
@@ -735,7 +738,9 @@ La data è risultata di gran lunga la variabile più importante (0.41), con gior
 \label{fig:so2_medie_annuali}
 \end{figure}
 
-Come si può vedere nei grafici \ref{fig_so2_medie_mensili}, \ref{so2_medie_annuali}\todo{non li risolve} le concentrazioni di SO2 registrate sono ormai a livelli bassissimi, tanto da non destare più preoccupazioni. Come già ampiamente riconosciuto da diversi studi in materia \cite{iir2020, scolari2017evoluzione}
+Come si può vedere nei grafici \ref{fig:so2_medie_mensili}, \ref{fig:so2_medie_annuali}
+%\todo{non li risolve}
+le concentrazioni di SO2 registrate sono ormai a livelli bassissimi, tanto da non destare più preoccupazioni. Come già ampiamente riconosciuto da diversi studi in materia \cite{iir2020, scolari2017evoluzione}
 %\todo{citare!!!}
 %aggiunto bib
  questo inquinante potrebbe essere arrivato al fondo naturale e non c'è motivo di preoccupazione per quanto riguarda la sua situazione attuale.
@@ -1164,6 +1169,28 @@ Effettivamente controllando le concentrazioni misurate si note come tra Marzo e 
 Questo calo probabilmente deriva da una minor attività anche per quanto riguarda il settore agricolo, che è praticamente l'unico responsabile delle concentrazioni misurate di questo inuqinante, che è stato costretto a rallentare durante i mesi di lockdown.
 
 Visto il forte collegamento tra questo inquinante e l'agricoltura qualsiasi misura di contenimento delle concentrazioni dovrà necessariamente agire su tale settore, poichè effettivamente con un calo dell'attività si è notato anche un calo nelle concentrazioni rilevate.
+
+\chapter{Appendice sulla validità dei modelli nel corso degli anni}
+A seguito della lettura di un interessante articolo \cite{app10134587} che, tramite l'uso di diverse tecniche di ML, tra cui anche Random Forest, ha provato a realizzare dei modelli per fare previsioni sulla qualità dell'aria della città di Milano utilizzando gli stessi dataset che sono stati impiegati anche nei nostri studi, ma limitatamente al periodo 2013-2016, e che suggeriva la possibilità di adottare dei modelli per la previsione della qualità dell'aria senza la necessità di avere i sensori sul campo, ho voluto provare a verificare come la nostra tecnica si potesse comportare in merito.
+Per verificare la possibilità di continuare ad utilizzare gli stessi modelli nel corso degli anni, controllandone quindi le performance ed i risultati ottenuti, l'idea è stata quella di creare dei modelli utilizzando i dati antecedenti ad una data per la fase di training, per poi andare invece a testarli sul periodo seguente, in modo da simulare la creazione di un modello in uno specifico momento per poi andare a verificare come si sarebbe comportato quel modello se fosse stato utilizzato nel futuro. Se i modelli avessero mostrato comunque buone performance e risultati vicini a quelli ottenuti utilizzando tutto il range di dati a disposizione si sarebbe potuto concludere che, effettivamente, sia possibile realizzare dei modelli per la previsione della qualità dell'aria senza aver bisogno di continuare a tenere operativi tutti i sensori sul campo.  
+
+La città che abbiamo scelto di prendere in considerazione è stata quella di Mantova, poichè risultava il capoluogo per il quale le serie delle variabili utilizzate iniziavano ad essere disponibili da prima di tutte le altre città. Come detto, per la costruzione dei modelli è stata quindi fissata una data perno: le rilevazioni antecedenti venivano usate per la costruzione del modello (training), mentre quelle successive per testarne le prestazioni. Inoltre, a tali modelli, sono state fatte costruire le serie normalizzate fino al 2020, in modo da poterle confrontare con quelle ottenute nelle analisi precedenti.  
+Si è quindi deciso di fare questa verifica su tutti gli inquinanti a disposizione, facendo diverse prove per ciascuno, andando a variare la data perno di un anno alla volta, partendo dal 2010 fino al 2019.  
+In tutti i modelli realizzati, indipendentemente dall'inquinante o dalla data perno scelta, si è però incorsi nel problema del \textit{covariate shift} \cite{quinonero2009dataset}, ovvero la degradazione delle performance dei modelli di ML quando le fasi di training e di testing avvengono utilizzando due campioni con distribuzioni diverse. Nel nostro caso questo problema, che con tecniche come Random Forest risulta parecchio limitante, non permette quindi di ottenere modelli sufficientemente precisi quando sono costretti a trattare un periodo i cui dati non sono stati usati nella fase di costruzione.
+
+A titolo esemplificativo vengono riportati i risultati ottenuti sul modello costruito per trattare il biossido di azoto ($NO_2$), prendendo come data perno il 1-1-2014, ma, come già detto, la stessa situazione è stata riscontrata in tutti i casi considerati.
+Il modello che avevamo creato in precedenza, utilizzando i dati di tutti gli anni a disposizione, in fase di testing era risultato avere un RMSE di 7.43$\mu g/m^3$ ed un coefficiente $R^2$ di 0.74.  
+Il modello creato utilizzando i dati degli anni antecedenti al 2014, e poi testato sulle rilevazioni del periodo successivo, ha invece ottenuto un indice RMSE di 10.81$\mu g/m^3$ (+25\% rispetto al modello ``classico'') ed un coefficiente $R^2$ di 0.23 (-66\%), che ci mostrano, soprattutto il secondo, proprio come il nostro modello abbia sofferto del cosiddetto covariate shift, che ne ha quindi degradato completamente le performance, rendendo il modello pressochè inutilizzabile.  
+Questo peggioramento delle performance ha chiaramente poi inciso anche sulle serie normalizzate ottenute, che successivamente alla data perno tendono a stabilizzarsi intorno ad un valore, mostrando proprio come in quei casi il modello non sia più capace di capire le dinamiche che portano ad avere variazioni sulle concentrazioni. \ref{fig:no2_mantova_2014}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{no2_mantova_2014}
+\caption{Confronto tra le serie normalizzate ottenute col modello classico (in rosso) e quella ottenuta dal modello costruito con i dati antecedenti al 2014 (in verde)}
+\label{fig:no2_mantova_2014}
+\end{figure}
+
+Dai risultati ottenuti, quindi, è emersa l'impossibilità di utilizzare la nostra tecnica, ma in generale anche altri algoritmi di ML, per creare dei modelli in grado di fare previsioni efficaci sulla qualità dell'aria che continuino a restare validi nel tempo, permettendo quindi di non utilizzare più sensori sul campo, poichè periodicamente è necessario farne un re-training utilizzando anche i nuovi dati a disposizione, così che gli stessi possano continuare a comprendere l'evoluzione della situazione nel corso del tempo.  
 
 \chapter{Conclusioni}
 Nelle nostre analisi abbiamo dimostrato come sia possibile applicare l'algoritmo Random Forest per eliminare l'influenza della meteorologia dalle serie dei principali inquinanti atmosferici, in modo da poterne analizzare l'andamento e le variazioni in modo più preciso.  

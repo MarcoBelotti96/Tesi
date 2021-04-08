@@ -1,0 +1,35 @@
+\documentclass[a4paper]{article}
+
+% Per generare il file PDF aderente alle specifiche PDF/A-1b. Verificarne poi la validità.
+%\usepackage[a-1b]{pdfx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,italian]{babel}
+\usepackage[hyphens]{url}
+
+\title{Riassunto tesi: Studio degli open data su meteo, aria e COVID\-19 in Lombardia ed analisi delle possibili relazioni con Random Forest\author{Marco Belotti, 871440}}
+
+\begin{document}
+\maketitle
+
+L'inquinamento atmosferico è sicuramente un tema molto importante e discusso all'interno della comunità scientifica, il suo impatto sulla saluta umana e sull'ambiente è noto e diverse nel corso degli anni sono state le misure introdotte per regolamentare le fonti emissive e provare a contenere il problema, specie laddove la situazione risultava maggiormente critica.  
+
+Nel corso degli ultimi 20 anni, grazie ad una serie di normative ed al progresso tecnologico che ha coinvolto tutti i settori, le concentrazioni di tutti gli inquinanti più preoccupanti come il biossido di azoto, il biossido di zolfo, il monossido di carbonio, il benzene e le polveri sottili (PM10 e PM2.5) sono calate con percentuali tra il 10\% ed il 90\%, ma per alcuni di essi, biossido di azoto e polveri sottili, rimane una certa preoccupazione a causa della potenziale pericolosità sulla salute delle concentrazioni attuali.
+
+Per continuare a contrastare efficacemente il problema è fondamentale capire l'impatto dei provvedimenti che vengono presi, così da poter continuare ad agire il più efficacemente possibile. Per poter fare questo tipo di analisi, però, ci si scontra con la forte variabilità delle concentrazioni causata dalle condizioni atmosferiche e meteorologiche, che spesso sono ben maggiori dei possibili guadagni portati da una misura di contrasto. Questa variabilità rende più complessa l'analisi degli andamenti e quindi anche riuscire a quantificare il reale apporto dato da un determinato provvedimento diventa molto difficile.
+
+Per facilitare le analisi è quindi necessario riuscire a comprendere, e successivamente eliminare, l'influenza data dalla meteorologia e dalle condizioni atmosferiche sulle concentrazioni. Per farlo nel corso degli anni sono stati sviluppati diversi modelli matematici che, tramite l'uso di tecniche statistiche, hanno dimostrato come effettivamente questa pulizia semplificasse poi l'analisi degli andamenti.
+
+Nel mondo del machine learning sono presenti diverse tecniche che permettono di costruire modelli utili ad affrontare problemi come l'eliminazione dell'influenza della meteorologia sull'inquinamento, ed infatti negli ultimi anni diversi studi hanno provato ad applicarne alcune per verificarne i risultati, dimostrando come esse permettano di fare analisi sugli andamenti più facilmente rispetto ai metodi puramente statistici, pur mantenendo una buona precisione.
+
+Il nostro obbiettivo è stato quello di utilizzare un algoritmo di machine learning per analizzare i dati messi liberamente a disposizione da ARPA Lombardia, che da oltre 30 anni ha una rete di sensori su tutto il territorio regionale per la rilevazione delle concentrazioni degli inquinanti e delle principali variabili meteorologiche, e ricostruire le serie storiche degli inquinanti depurandole dalle variazioni causate dalle condizioni atmosferiche, per poi fare un'analisi dell'efficacia di alcune misure prese come l'Area C nel comune di Milano e il lockdown totale dei mesi di Marzo ed Aprile 2020.
+
+L'algoritmo da noi scelto per provare ad affrontare il problema è stato Random Forest, un algoritmo d'insieme basato sugli alberi di decisione, dalle buone prestazioni e particolarmente adatto ad affrontare un problema complesso come quello dell'inquinamento e della sua interazione con il meteo e l'atmosfera, in cui le variabili usate per tracciare i diversi fenomeni sono spesso tra di loro correlate. L'idea è stata quella di creare dei modelli utilizzando i dati delle serie storiche di inquinanti e variabili meteorologiche per ottenere strumenti che, forniti in ingresso una specifica data della serie storica e delle condizioni meteorologiche, fossero in grado di stimare con una buona precisione quali sarebbero state le concentrazioni misurate per i diversi inquinanti se in tale data ci fossero state le condizioni atmosferiche specificate. Una volta in possesso di questi modelli è stato poi facile eliminare l'influenza delle condizioni meteorologiche dagli andamenti degli inquinanti, rigenerando tutte le serie storiche facendo fare molte previsioni per ogni data, variando di volta in volta le condizioni meteorologiche usate in input, e poi calcolarne la media aritmetica, in modo da ottenere quello che sarebbe stato il valore della concentrazione in una giornata con condizioni atmosferiche medie.
+
+Nel corso di tutte le analisi l'algoritmo Random Forest si è dimostrato valido e capace di costruire dei buoni modelli che permettessero di effettuare analisi con una buona confidenza sui risultati ottenuti. Inoltre la versatilità della tecnica, capace di sfruttare un gran numero di variabili senza porre particolari vincoli, ci ha permesso anche di utilizzare i dati degli ingressi veicolari in Area C nella città di Milano per provare a stimare l'apporto del traffico sulle concentrazioni di ossidi di azoto, polveri sottili e monossido di carbonio.
+
+Abbiamo verificato come anche sulle serie normalizzate, ovvero quelle ottenute eliminando l'influenza della meteorologia, si riscontrino i cali già noti per i diversi inquinanti, con un'unica eccezione per l'ozono che è l'unico per cui è stato riscontrato un trend in crescita. Abbiamo visto come provvedimenti di carattere locale, che interessano piccole aree del territorio e solo una piccola parte delle fonti emissive, come ad esempio Area C nel comune di Milano, non abbiano portato ad alcun miglioramento effettivo della situazione. Durante i mesi del lockdown totale della primavera 2020 si è riscontrato qualche calo su ossidi di azoto e benzene, che sono gli inquinanti caratteristici del traffico veicolare, ma decisamente contenuto se si considera l'entità dei provvedimenti messi in atto, mentre per tutti gli altri inquinanti la situazione è rimasta pressoché invariata.
+
+Oltre ad aver dimostrato come sia possibile utilizzare algoritmi di machine learning per fare analisi più approfondite sugli andamenti delle concentrazioni di inquinanti, il nostro studio è anche un esempio di quale sia l'utilità di mettere a libera disposizione del cittadino questi dati, in modo che ciascuno possa liberamente informarsi ed approfondire una questione molto delicata e discussa come quella dell'inquinamento atmosferico. In uno sondaggio condotto sulla popolazione europea l'Italia è risultata uno dei paesi in cui i cittadini si sentono maggiormente disinformati sulla questione, questi dati sono sicuramente uno degli strumenti che andranno usati per informarli meglio e permettere a ciascuno di prendere coscienza delle reali problematiche connesse all'inquinamento atmosferico.
+
+\end{document}

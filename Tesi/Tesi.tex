@@ -1,9 +1,12 @@
+\begin{filecontents*}{Tesi.xmpdata}
+  \Title{Studio degli open data su meteo, aria e COVID\-19 in Lombardia ed analisi delle possibili relazioni con Random Forest}
+  \Author{Marco Belotti}
+\end{filecontents*}
+
 % scopiazzato dal template di Matteo Longeri (grazie!)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper]{report}
 % o article, book, ...
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % packages...
@@ -13,6 +16,8 @@
 
 % Per generare il file PDF aderente alle specifiche PDF/A-1b. Verificarne poi la validità.
 %\usepackage[a-1b]{pdfx}
+%\usepackage[T1]{fontenc}
+\pdfminorversion=4
 
 \usepackage{hyperref}
 \usepackage{graphicx}
@@ -26,9 +31,9 @@
 \usepackage[section]{placeins}
 
 \usepackage[a4paper,top=2cm,bottom=2cm,outer=5cm,verbose,headheight=1cm,heightrounded]{geometry}
-\setlength{\marginparwidth}{4.5cm} %per farci stare todonotes, per il finale si può togliere
+%\setlength{\marginparwidth}{4.5cm} %per farci stare todonotes, per il finale si può togliere
 
-\usepackage{todonotes}
+%\usepackage{todonotes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -41,11 +46,13 @@
 \end{center}
 \vspace{12mm}
 \begin{center}
-{\huge{\bf Studio degli open data su meteo, aria e COVID\-19 in Lombardia ed analisi delle possibili relazioni con Random Forest}}\\
-%\vspace{4mm}
-%{\huge{\bf TITOLO}}\\
-%\vspace{4mm}
-%{\huge{\bf TITOLO}}\\
+{\huge{\bf Studio degli open data su meteo,}}\\
+\vspace{4mm}
+{\huge{\bf aria e COVID\-19 in Lombardia ed}}\\
+\vspace{4mm}
+{\huge{\bf analisi delle possibili relazioni con}}\\
+\vspace{4mm}
+{\huge{\bf Random Forest}}\\
 \end{center}
 \vspace{12mm}
 \begin{flushright}
@@ -67,12 +74,12 @@
 \end{center}
 \end{titlepage}
 
-\listoftodos
+%\listoftodos
 
 \tableofcontents
 
-\todo{atrent: check se inserito articolo che avevo segnalato sulla percezione dell'inquinamento, eurobarometer!
-mbelotti: aggiunta cit più avanti (al termine dell'introduzione)}
+%\todo{atrent: check se inserito articolo che avevo segnalato sulla percezione dell'inquinamento, eurobarometer!
+%mbelotti: aggiunta cit più avanti (al termine dell'introduzione)}
 
 \chapter{Introduzione}
 L'inquinamento atmosferico è un tema che viene spesso discusso e dibattuto, visto che respirare un'aria pulita è considerato un requisito basilare per la buona salute umana. Da anni il WHO \cite{world2006air} si occupa di studiare i potenziali effetti dell'inquinamento sulla salute umana, cercando di stimare che tipo di impatto possa avere un'esposizione prolungata ad alte concentrazioni.  
@@ -117,8 +124,8 @@ Questo procedimento viene però complicato dal fatto che le dinamiche che portan
 %marco: non ho introdotto il termine proxy, ma comunque è spiegato cosa si intende quando si dice che i valori di una variabile influenzano quelli di un'altra}
 
 Nel corso degli ultimi tre decenni nel mondo dell'informatica ha preso campo un'area detta \textit{machine learning} (ML)
-\todo{atrent: almeno un ref sul ML, anche un testo ufficiale o simili
-mbelotti: aggiunta ref}
+%\todo{atrent: almeno un ref sul ML, anche un testo ufficiale o simili
+%mbelotti: aggiunta ref}
 , che fa uso dei computer e della statistica per creare dei modelli predittori che potessero porsi come alternativa ai classici metodi statistici già esistenti \cite{james2013introduction}. Sono quindi state sviluppate tecniche di ML non parametriche, ovvero che non necessitano di fare alcun tipo di assunzione statistica sulle variabili considerate, che, grazie all'uso dei computer per analizzare grosse moli di dati, permettono di arrivare alla creazione di modelli con buone capacità predittive anche senza occuparsi dei problemi che invece caratterizzano gli approcci puramente statistici. Questi ultimi richiedono infatti, prima di poterli applicare, di fare una serie di assunzioni
 %\todo{quali?
 %marco: specificato alcune delle assunzioni necessarie (le più semplici, perchè alcune richiederebbero una trattazione più specifica dell'argomento per essere introdotte) e aggiunto footnote} 
@@ -129,13 +136,13 @@ sui dati considerati, come la linearità della relazione con i valori della vari
 %marco: aggiunte due spiegazioni sui vantaggi del ML rispetto alla statistica, così mi sembra più chiaro}
 
 ARPA Lombardia \footnote{\url{https://www.arpalombardia.it/Pages/ARPA_Home_Page.aspx}}
-\todo{atrent: link
-mbelotti: aggiunta footnote}
+%\todo{atrent: link
+%mbelotti: aggiunta footnote}
 possiede, sul territorio regionale, una rete di 85 stazioni fisse che, per mezzo di analizzatori automatici, sono in grado di fornire rilevazioni ad intervalli di tempo regolari, permettendoci di creare quindi un dettagliato catalogo dei valori delle concentrazioni nel corso del tempo. Tutte queste rilevazioni vengono poi rese accessibili liberamente tramite archivi online, per permetterne la libera consultazione da parte di tutti i cittadini.  
 
 Nel nostro studio abbiamo quindi fatto uso di questi dati, unitamente a quelli delle variabili meteorologiche sempre resi disponibili da ARPA Lombardia, per creare tramite l'uso di una tecnica di machine learning chiamata \textit{Random Forest} \cite{breiman2001random}
-\todo{atrent: link/ref
-mbelotti: aggiunta ref}
+%\todo{atrent: link/ref
+%mbelotti: aggiunta ref}
 %\todo{atrent: quando introduci un termine fa messo in corsivo, specie se è inglese}
  dei modelli predittivi che ci permettano di arrivare a fare questa normalizzazione delle concentrazioni di inquinanti rispetto alla meteorologia e quindi di analizzare come si sia evoluta la situazione nella nostra regione nel corso degli anni dal 2012 ad oggi, cercando di capire quali siano stati i provvedimenti e gli eventi più efficaci nell'abbattimento delle concentrazioni.  
 
@@ -150,8 +157,8 @@ Nel capitolo 5 verrà presentata un'analisi del periodo di diffusione dell'epide
 
 Nell'appendice finale, inserito a seguito della lettura di un articolo \cite{app10134587} che ha utilizzato alcune tecniche di machine learning, tra cui anche Random Forest, ed i nostri stessi dataset per provare a fare previsioni sulla qualità dell'aria della città di Milano, è presentata una verifica fatta sulla validità nel corso degli anni dei modelli creati.
 
-\todo{atrent: inserire ref all'articolo osceno e commentarlo?
-mbelotti: aggiunto appendice in fondo al testo (prima delle conclusioni)}
+%\todo{atrent: inserire ref all'articolo osceno e commentarlo?
+%mbelotti: aggiunto appendice in fondo al testo (prima delle conclusioni)}
 
 \chapter{Normalizzazione meteorologica utilizzando Random Forest}
 L'atmosfera è lo strato gassoso che ricopre esternamente la terra come un involucro ed è costituita principalmente da azoto e ossigeno, mescolati con piccole quantità di altri gas e pulviscolo. La porzione più bassa, che sta a diretto contatto col suolo, è definita strato limite planetario (Planetary Boundary Layer, o PBL, in inglese) e sia la sua struttura che l'evoluzione hanno influenze fondamentali sul comportamento degli inquinanti atmosferici di maggior interesse \cite{dina2009concentrazione}.  
@@ -162,8 +169,9 @@ La forte variabilità stagionale che si riscontra su tanti inquinanti è infatti
 
 Per poter analizzare i dati sull'inquinamento atmosferico volendo capire come le misure messe in atto e le attività antropiche abbiano influenzato l'andamento delle concentrazioni nel corso degli anni non possiamo trascurare questa grossa influenza da parte della meteorologia e del clima, altrimenti non sarebbe possibile stabilire con certezza quanta influenza possa avere avuto un determinato provvedimento rispetto a quella data dalla variazione delle condizioni atmosferiche.  
 
-Nel corso degli anni diversi studi hanno provato ad affrontare la questione usando metodi che portassero ad ottenere dei modelli statistici in grado di capire e modellare le relazioni tra inquinanti e condizioni atmosferiche e, indipendentemente dal metodo usato, si è visto come variabili legate alla meteorologia, all'altezza dello strato di rimescolamento ed alla stagionalità siano in grado di spiegare con una certa precisioni gli andamenti delle serie di inquinanti.  \todo{atrent: alcuni non li risolve, puoi usare la virgola (vedi sopra mia correzione), andrebbero riportate le conclusioni principali dei vari paper citati, decommento perché non mi pare evaso il mio todo
-mbelotti: sistemato, aggiunto brevi citazioni agli studi}
+Nel corso degli anni diversi studi hanno provato ad affrontare la questione usando metodi che portassero ad ottenere dei modelli statistici in grado di capire e modellare le relazioni tra inquinanti e condizioni atmosferiche e, indipendentemente dal metodo usato, si è visto come variabili legate alla meteorologia, all'altezza dello strato di rimescolamento ed alla stagionalità siano in grado di spiegare con una certa precisioni gli andamenti delle serie di inquinanti.  
+%\todo{atrent: alcuni non li risolve, puoi usare la virgola (vedi sopra mia correzione), andrebbero riportate le conclusioni principali dei vari paper citati, decommento perché non mi pare evaso il mio todo
+%mbelotti: sistemato, aggiunto brevi citazioni agli studi}
 Segal ha dimostrato come fosse possibile applicare un modello numerico per simulare la circolazione di aria nella zona della baia di Chesapake (USA) per poterne predirre la qualità dell'aria \cite{segal1982numerical}. Eagleman nel suo libro illustra diversi metodi matematici applicabili per lo studio delle concentrazioni di inquinanti e degli effetti che ha su di esse la meteorologia \cite{eagleman1991air}. Aldrin e Haff propongono un modello per la stima delle concentrazioni dei principali inquinanti utilizzando i valori delle variabili meteorologiche e dei volumi di traffico \cite{aldrin2005dependence}. Un altro studio si è invece concentrato sull'influenza della meteorologia sul PM10 e su come essa complichi l'analisi dei reali trend di un inquinante \cite{barmpadimos2011influence}. Cattani, in uno studio del 2014, ha proposto un metodo matematico per il calcolo dei trend delle concentrazioni di un inquinante, eliminando l'influenza della stagionalità \cite{cattani2014analisi}.
 
 I processi atmosferici, però, sono molto complessi, non lineari e spesso si riscontra collinearità tra le osservazioni di variabili diverse, una situazione in cui i valori di una possono essere approssimati in modo preciso da quelli di un'altra, e questo rende la modellazione grazie all'uso di metodi parametrici, cioè quelli basati su metodi puramente matematici come la regressione lineare, molto complicata poiché questi fattori influiscono molto sulla precisione e sull'affidabilità dei risultati ottenuti \cite{gunst1975regression}. 
@@ -178,8 +186,8 @@ Il machine learning, grazie all'uso di metodi non parametrici, ovvero metodi che
 Grange e Carslaw, tramite l'uso di un metodo di ML non parametrico per affrontare il problema della normalizzazione meteorologica, sono giunti alla conclusione che la libertà sui valori di input per i modelli, l'efficiente gestione della collinearità delle variabili e della loro interazione rendano il loro uso efficace per trattare tale problema e che la loro applicazione sia abbastanza flessibile per un buon range di analisi sull'efficacia dei provvedimenti presi in materia di qualità dell'aria \cite{grange2019using}.
 
 Una volta in possesso di uno strumento che sappia spiegarci come variazioni dei valori di una variabile influenzino quelli di un'altra, che nel nostro caso significa arrivare ad ottenere un modello capace di dirci come cambiamenti nelle condizioni atmosferiche e nella stagionalità portino a cambiare le concentrazioni registrate per gli inquinanti, diventa semplice anche arrivare ad eliminare la loro influenza. Le variabili predittrici, ovvero quelle delle quali vogliamo capire ed eliminare l'influenza dalle concentrazioni degli inquinanti, utilizzate nei nostri modelli sono state: la temperatura, le precipitazioni registrate, il numero di giorni passati dalle ultime precipitazioni, l'umidità relativa, la radiazione globale e direzione e velocità del vento. Inoltre sono state inserite anche il giorno dell'anno ed il giorno della settimana, due variabili temporali che potessero fare da proxy
-\todo{atrent: qui ok proxy?
-mbelotti: in questo contesto l'uso del termine proxy è giusto, poichè tali variabili vengono usate per descrivere gli andamenti tipici stagionali e settimanali, che altrimenti non sarebbero osservabili/misurabili, ref: https://en.wikipedia.org/wiki/Proxy\_(statistics)}
+%\todo{atrent: qui ok proxy?
+%mbelotti: in questo contesto l'uso del termine proxy è giusto, poichè tali variabili vengono usate per descrivere gli andamenti tipici stagionali e settimanali, che altrimenti non sarebbero osservabili/misurabili, ref: https://en.wikipedia.org/wiki/Proxy\_(statistics)}
  per gli andamenti tipici stagionali e settimanali (dovute alle maggiori attività antropiche, soprattutto nelle città, durante i giorni feriali) mostrati dalle concentrazioni di molti inquinanti. 
 
 Analizzando la serie di ogni inquinante e riportandola, grazie all'uso di un modello appositamente costruito basandosi sui dati di tale serie, a condizioni meteorologiche e di stagionalità uguali per tutti i giorni possiamo quindi arrivare ad ottenere una serie il cui andamento sia indipendente dall'influenza data da questi fattori.
@@ -193,7 +201,7 @@ In figura \ref{fig:decision_tree} è riportato un esempio di albero di decisione
 %atrent: riformulare un po' più chiaro e divulgativo
 %marco: migliorata spiegazione ed aggiunta figura d'esempio che secondo me aiuta bene a capire il concetto}
 
-\todo{atrent: in generale attendi che sia io a commentare il todo, cioè devo valutare io se è stato evaso}
+%\todo{atrent: in generale attendi che sia io a commentare il todo, cioè devo valutare io se è stato evaso}
 
 
 \begin{figure}[h]
@@ -225,15 +233,15 @@ Di ogni modello sono state valutate le prestazioni grazie all'uso della tecnica 
 L'algoritmo Random Forest permette di personalizzare alcuni aspetti del suo funzionamento per cercare di ottimizzarne le performance grazie all'uso di alcuni iperparametri, che vanno settati prima della creazione del modello e ne determinano le regole da applicare in tale fase. Una delle prime attività svolte, dopo aver verificato che fosse effettivamente possibile utilizzare Random Forest per ottenere la normalizzazione meteorologica, è stata proprio una ricerca per individuare i valori migliori da assegnare ai diversi iperparametri in modo da ottenere il miglior compromesso possibile tra performance e affidabilità. Il numero di alberi creato in ciascuna foresta è stato di 300, la profondità massima di ogni singolo albero è stata fissata a 20 ed il numero di variabili da utilizzare per creare le condizioni presenti nei nodi intermedi a 5.
 
 %Ogni località ed ogni inquinante \todo{è stata}sono stati trattati con modelli specifici, costruiti di volta in volta utilizzando rilevazioni che potesssero rappresentare fedelmente le condizioni meteorologiche e di inquinamento di ogni posto considerato.  
-\todo{atrent: mi aspetto di trovare nel seguito una analisi più approfondita
-mbelotti: riscritta frase, va meglio?}
+%\todo{atrent: mi aspetto di trovare nel seguito una analisi più approfondita
+%mbelotti: riscritta frase, va meglio?}
 Per ottenere modelli che fossero i più fedeli possibile rispetto alla situazione reale da descrivere si è scelto di trattare ogni località ed ogni inquinante creando di volta in volta un modello apposito, costruito sfruttando sempre il procedimento descritto ed utilizzando le serie storiche registrate nella località considerata, che potesse comprendere al meglio le dinamiche caratteristiche del luogo.
 
 Quello che abbiamo quindi ottenuto da Random Forest sono modelli che, ricevuta in ingresso una data ed i valori delle condizioni meteorologiche e atmosferiche, sono in grado di prevedere con una certa precisione quale sarebbe stata la concentrazione dell'inquinante misurata per quel giorno se si fossero verificate tali condizioni meteorologiche.  
 
 Una volta in possesso di uno strumento di questo tipo diventa facile capire come eliminare l'influenza della meteorologia e delle condizioni atmosferiche dalle concentrazioni degli inquinanti, poiché, per ogni giorno della serie considerata, basta far fare al nostro modello molte previsioni, variando di volta in volta le condizioni atmosferiche, e poi calcolarne la media, che rappresenta quindi la concentrazione dell'inquinante per tale data se si fossero verificate condizioni medie. Per ottenere le serie utilizzate nelle nostre analisi per ogni giornata sono state fatte 1000 previsioni, variando di volta in volta i valori delle variabili predittrici, poiché si è visto che pur aumentando ulteriormente questo numero non si riuscisse ad ottenere risultati più precisi.
-\todo{atrent: idem
-mbelotti: aggiunta spiegazione}
+%\todo{atrent: idem
+%mbelotti: aggiunta spiegazione}
 
 Matematicamente possiamo definire le variabili predittrici usate per la costruzione dei modelli come $X_1,...,X_p$ e la concentrazione dell'inquinante trattato come $Y$. Possiamo quindi dire, visto che le variabili predittrici sono variabili che influenzano l'andamento di quella che dobbiamo predirre, che 
 \begin{equation}
@@ -244,7 +252,7 @@ Una volta in possesso di un modello, per il calcolo della concentrazione normali
 \begin{equation}
 c_{norm D} = \frac{\sum_{i=1}^{1000} \hat{f}(D, x_{1_i},...,x_{p_i})}{1000}
 \end{equation}
-in cui D rappresenta la data per la quale si vuole calcolare la concentrazione, che viene fissata allo stesso valore per tutte le previsioni, e $X_{1_i},...,X_{p_i}$ rappresentano i valori degli altri predittori che sono estratti casualmente e con reimmissione dalle loro serie storiche.
+in cui D rappresenta la data per la quale si vuole calcolare la concentrazione, che viene fissata allo stesso valore per tutte le previsioni, e $X_{1_i},...,X_{p_i}$ rappresentano i valori degli altri predittori che ogni volta sono estratti casualmente e con reimmissione dalle loro serie storiche.
 
 Ripetendo questo passaggio per tutti i giorni di una serie e per diversi inquinanti e località siamo così arrivati ad ottenere delle serie il cui andamento fosse stato "pulito" dall'influenza della meteorologia, permettendoci quindi di analizzarne meglio sia il trend che di verificare in modo più preciso quale sia stato l'impatto delle misure di contenimento prese.  
 
@@ -254,15 +262,15 @@ Fondamentale per il funzionamento della nostra tecnica era aver a disposizione m
 da parte di chiunque \cite{arpa_aria, arpa_meteo}. Mettere questi dati a disposizione dei cittadini, favorendone la loro fruizione, permette ad ognuno di poter fare delle valutazioni sia sulla reale qualità dell'aria che si respira tutti i giorni che sull'operato degli enti governativi, acquisendo una miglior conoscenza su un tema molto delicato e discusso. In tal senso l'apertura di ARPA Lombardia, che dal 2017 ha semplificato l'accesso ed il download dei dataset, è fondamentale e ha segnato una svolta rispetto ad un passato in cui la fruizione non era certamente facilitata \cite{trentini2014lombardy}. 
 In assenza di questi dati non sarebbe possibile fare analisi di questo tipo, poiché per imparare le diverse relazioni tra le variabili in gioco i nostri modelli hanno per forza bisogno di grandi quantità di informazioni, che possano descrivere tutte le diverse situazioni riscontrabili nella realtà.  
 L'Italia, secondo un report del 2019 in cui sono presentati i risultati di un sondaggio europeo sulla percezione della qualità dell'aria e dei relativi problemi da parte dei cittadini \cite{attitudes2019}, è il secondo stato per maggioranza di persone che non si sentono adeguatamente informate sulla questione (69\% del totale degli intervistati). Inoltre, sempre nello stesso studio, l'Italia risulta essere il quinto stato per maggioranza di persone che pensano che la situazione sia peggiorata nel corso degli ultimi anni (74\% degli intervistati). Considerato che oltre il 90\% della popolazione ritiene seri i problemi salutari legati all'inquinamento atmosferico, si capisce come sia importante informare maggiormente la popolazione sull'argomento, così da permettere di poter prendere maggiore coscienza dei reali problemi e della situazione, ed avere libero accesso ai dati è sicuramente uno dei punti di partenza fondamentali per raggiungere questo obbiettivo.
-\todo{atrent: qui starebbe bene accenno al rapporto EU sulla percezione dell'inquinamento e un breve excursus sulla reale situazione
-mbelotti: aggiunto paragrafo}
+%\todo{atrent: qui starebbe bene accenno al rapporto EU sulla percezione dell'inquinamento e un breve excursus sulla reale situazione
+%mbelotti: aggiunto paragrafo}
 
 Il processo completo tramite il quale si è arrivati ai risultati presentati nelle prossime sezioni è iniziato con una fase di raccolta e pre-elaborazione dei dati messi a disposizione da ARPA 
-\todo{omogeneizzare al maiuscolo?
-mbelotti: si}
+%\todo{omogeneizzare al maiuscolo?
+%mbelotti: si}
 Lombardia relativi all'inquinamento atmosferico e alla meteorologia, creando per ciascun sensore, che sia esso relativo al meteo o all'inquinamento, un file CSV specifico contenente le medie giornaliere dei valori registrati nel corso degli anni. Dopodiché, per ogni località considerata nel corso delle analisi, si è creato un modello specifico utilizzando i dati delle concentrazioni di inquinante, della temperatura, dell'umidità, delle precipitazioni registrate, della radiazione globale e di direzione e velocità del vento dei sensori presenti in tale località, così che i dati utilizzati per ciascun modello rispecchiassero il più fedelmente possibile le reali condizioni atmosferiche e meteorologiche del luogo in esame. I buchi presenti nei dati, causati dalla mancanza di rilevazioni per determinate date, sono stati riempiti con il valore medio di ciascuna variabile, tranne che per la concentrazione di inquinante, in cui assenza si è scelto di non considerare la data nel calcolo della serie normalizzata.
-\todo{già detto sopra
-mbelotti: tolta frase}
+%\todo{già detto sopra
+%mbelotti: tolta frase}
 Per le foreste dei nostri modelli il numero di alberi presenti è stato fissato a 300, la profondità massima del singolo albero a 20 ed il numero di variabili utilizzate per creare le condizioni presenti nei nodi interni di ciascuna struttura a 5, poiché tramite una serie di test si è stabilito che questi fossero i valori che offrono il miglior compromesso prestazioni/precisione possibile nel nostro caso. Una volta entrati in possesso del modello si è poi passati al calcolo della serie normalizzata, facendo fare, per ciascuna data del periodo considerato, 1000 previsioni sulla concentrazione dell'inquinante, variando di volta in volta le condizioni meteorologiche considerate estraendole casualmente dall'insieme dei dati di partenza, per poi calcolarne la media che rappresenta il valore della concentrazione normalizzata calcolato dalla nostra tecnica. 
 
 Tutto il lavoro di raccolta ed analisi dei dati è stato fatto utilizzando il linguaggio open source Python. Per l'utilizzo dell'algoritmo Random Forest ci si è appoggiati all'implementazione presente nella libreria Scikit-learn \cite{scikit-learn}. Tutto il codice usato per il recupero dei dati, la loro elaborazione, la creazione dei modelli con Random Forest e le analisi sui risultati ottenuti è liberamente accessibile ed utilizzabile nel repository pubblico presente su GitHub \cite{belotti2020}.
@@ -279,25 +287,25 @@ Tutto il lavoro di raccolta ed analisi dei dati è stato fatto utilizzando il li
 
 \chapter{La situazione in Lombardia}
 Inizialmente sono state affrontate una serie di analisi in cui, tramite l'applicazione di Random Forest
-\todo{omoegenizzare capitalizzazione e corsivo, parliamone
-mbelotti: omogenizzato capitalized}
+%\todo{omoegenizzare capitalizzazione e corsivo, parliamone
+%mbelotti: omogenizzato capitalized}
 per ottenere la normalizzazione dei dati sull'inquinamento relativamente alle condizioni meteorologiche, si è cercato di delineare il quadro della situazione per quanto riguarda i principali inquinanti atmosferici in Lombardia sfruttando i vantaggi derivanti dall'aver eliminato dalle concentrazioni l'influenza della meteorologia.
 
 Sono state analizzate le serie storiche normalizzate dei principali inquinanti atmosferici, usando i dati registrati nei dodici capoluoghi di provincia lombardi. Per ogni inquinante di ogni capoluogo è stato creato un modello apposito, così da poter analizzare ogni situazione con un modello specifico creato appositamente per cercare di stimare al meglio le dinamiche locali degli eventi climatici e la loro relazione con gli inquinanti considerati. 
 
 Il requisito di iniziare a considerare le serie storiche con cui creare i modelli solo a partire dalla data di messa in funzione del sensore più recente tra tutti quelli delle variabili coinvolte nella loro creazione ha purtroppo limitato il periodo considerato dalle nostre analisi, poiché per la maggior parte delle località le rilevazioni della direzione e velocità del vento, che è sicuramente uno dei fattori più influenti sull'andamento delle concentrazioni, sono iniziate solo nell'ultimo decennio.Una possibile soluzione a questo problema poteva essere quella di usare i valori medi di ciascuna variabile per il periodo in cui non fossero disponibili le registrazioni, ma questo, specialmente se fatto su periodi estesi, portava di fatto ad alterare le prestazioni e l'affidabilità del nostro modello poiché causava l'introduzione di un numero consistente di dati "fittizi"
 %\todo{spelling! vale un po' ovunque}
-\todo[color=green]{mbelotti: spell check su tutto il documento
-mbelotti: fatto, se trova altri errori me li segnali}
+%\todo[color=green]{mbelotti: spell check su tutto il documento
+%mbelotti: fatto, se trova altri errori me li segnali}
  che compromettevano l'individuazione delle diverse dinamiche che governano gli andamenti delle concentrazioni.
 
 I modelli ottenuti nel corso delle analisi hanno avuto tutti prestazioni molto buone, specialmente quelli relativi all'ozono, con le polveri sottili che invece si sono rivelate l'inquinante con cui fanno più fatica ad adattarsi, evidenziando come per questo tipo di inquinanti, che arrivano a percorrere anche grosse distanze, le sole variabili delle rilevazioni meteorologiche di superficie e temporali considerate non siano sufficienti per spiegarne completamente l'andamento, che è governato da eventi su scale molto più grandi di quelle descritte dalle nostre variabili \cite{grange2018random}. 
-\todo{atrent: c'è qualche bib a supporto? per avere conferma esterna intendo
-mbelotti: aggiunta bib}
+%\todo{atrent: c'è qualche bib a supporto? per avere conferma esterna intendo
+%mbelotti: aggiunta bib}
 
 Come si può osservare in figura \ref{fig:importanza_tot}, tra tutti i modelli ottenuti la variabile più importante è risultata essere la temperatura, seguita dalla data e dal giorno dell'anno. Questa considerazione però non dovrebbe meravigliarci se pensiamo al collegamento che esiste tra ciascuna e l'inquinamento: la temperatura serve sia ad identificare i cicli stagionali che eventuali periodi più caldi o freddi della media in cui le emissioni di determinati settori, come ad esempio i riscaldamenti domestici, potrebbero aumentare considerevolmente
-\todo{la gente?!?!?!!?!?! non sappiamo bene quali siano le fonti, evitare attribuzioni se non fondate
-mbelotti: sistemato}
+%\todo{la gente?!?!?!!?!?! non sappiamo bene quali siano le fonti, evitare attribuzioni se non fondate
+%mbelotti: sistemato}
 , la data ci permette di identificare l'evoluzione nel corso degli anni dei valori registrati, e quindi la presenza di eventuali trend o andamenti particolari, e il giorno dell'anno serve per identificare la stagionalità caratteristica degli inquinanti.  
 Alle variabili legate alle precipitazioni, ovvero la quantità registrata e il numero di giorni trascorsi dall'ultimo evento, è sempre stata assegnata un'importanza abbastanza bassa. È bene ricordare, però, che l'importanza delle variabili è calcolata come il totale della diminuzione dell'impurità dei nodi della foresta, pesata per la probabilità di raggiungere ciascun nodo. Questa è quindi una misura che cerca di stimare come il nostro modello lavori per fare le previsioni, ma non indica assolutamente che tipo di relazioni ci siano tra la variabile considerata e quella da predirre. Quindi, anche se nei nostro modelli alle precipitazioni viene associata una bassa importanza, non significa che non abbiano influenza sulle concentrazioni registrate, ma semplicemente che la variabile per lui è meno utile nel fare previsioni più precise. 
 
@@ -319,8 +327,8 @@ Entrambi sono emessi in atmosfera da processi di combustione ad alta temperatura
 Secondo l'inventario regionale INEMAR 2017 \cite{inemar2017} la categoria maggiormente responsabile per le emissioni di questi inquinanti è il trasporto su strada, con un contributo pari al 50\% del totale delle emissioni, seguita dalle combustioni industriali e civili (con circa il 15\% di contributo ciascuna). Sempre secondo l'inventario il combustibile maggiormente responsabile delle emissioni di questa categoria è il diesel, con oltre il 50\% del totale delle emissioni, seguito dal gas naturale (20\%).
 
 Le prime normative introdotte per contenerne le concentrazioni sono arrivate nei primi anni 90, imponendo limiti alle emissioni degli impianti e favorendo l'uso del gas naturale al posto di gasolio e cherosene come combustibili. Negli anni più recenti i limiti normativi sono stati ulteriormente abbassati. Per quanto riguarda il traffico, visto che è il settore maggiormente responsabile, i provvedimenti più importanti sono sicuramente l'introduzione delle marmitte catalitiche e l'introduzione di limiti alle emissioni dei veicoli, con le famose categorie EuroX. Proprio questo ultimo aspetto ha fatto sì che, sebbene nel corso degli anni il numero dei veicoli circolanti e dei kilometri percorsi sia aumentato
-\todo{bib! o nel iir2020 si dice che i chilometri sono aumentati?
-mbelotti: è detto nell'iir2020}
+%\todo{bib! o nel iir2020 si dice che i chilometri sono aumentati?
+%mbelotti: è detto nell'iir2020}
 , l'inquinante abbia comunque fatto registrare un trend in forte calo nel corso degli anni \cite{iir2020}.
 
 \begin{table}[h!]
@@ -361,8 +369,8 @@ Nei modelli ottenuti le variabili più importanti sono state la temperatura, che
 \label{fig:nox_medie_annuali}
 \end{figure}
 
-\todo{atrent: discutiamo sul plottare o meno la soglia (200), io sarei favorevole, chiarisce la dimensione del NON-problema, specie sui valori plotati, mentre sulle medie plotterei solo la soglia media (40)
-mbelotti: in realtà qui stiamo trattando i NOx che NON hanno soglia, la soglia di 200 è solo per l'NO2, ed infatti nel grafico sotto è mostrata}
+%\todo{atrent: discutiamo sul plottare o meno la soglia (200), io sarei favorevole, chiarisce la dimensione del NON-problema, specie sui valori plotati, mentre sulle medie plotterei solo la soglia media (40)
+%mbelotti: in realtà qui stiamo trattando i NOx che NON hanno soglia, la soglia di 200 è solo per l'NO2, ed infatti nel grafico sotto è mostrata}
 
 Controllando il grafico in figura \ref{fig:nox_medie_mensili} delle medie mensili si nota come la serie normalizzata riesca a non essere influenzata dall'andamento stagionale, mantenendo sempre un livello "medio" costante, che è proprio il risultato che ci aspettavamo di ottenere dall'applicazione della nostra tecnica. Noi volevamo riuscire ad avere delle serie che fossero indipendenti da tutti questi fattori che possono incidere sulle concentrazioni e visto l'andamento mostrato da quella ottenuta, che rimane approssimativamente intorno ad un valore "medio" indipendentemente dalla giornata, possiamo essere abbastanza fiduciosi di essere riusciti a stimarla con una buona precisione.
 Sulle medie annuali, riportate in figura \ref{fig:nox_medie_annuali} vengono sicuramente eliminati i picchi, probabilmente causati da condizioni meteorologiche più favorevoli/sfavorevoli all'accumulo avute da alcuni anni in particolare (ad esempio 2006 o 2011), ma l'andamento delle due serie risulta comunque compatibile, ancora una volta a dimostrazione della validità del risultato ottenuto, che sarebbe sicuramente stata messa in discussione se si fossero ottenuti dei risultati completamente diversi.
@@ -427,7 +435,7 @@ Il particolato classicamente viene diviso in due categorie: PM10 e PM2.5, a seco
 %\todo{spiegare, magari con footnote}
 %aggiunta footnote
 , al di sotto dei 10$\mu$m sono classificate come PM10 e il discorso analogo vale anche per il PM2.5. Essendo appunto particelle molto piccole risultano quindi pericolose per la salute poiché riescono a penetrare più a fondo nell'apparato respiratorio, arrivando quindi ad arrecare danni maggiori.
-\todo{atrent: in realtà potrebbero benissimo essere metabolizzate... cmq non voglio entrare in troppa polemica} 
+%\todo{atrent: in realtà potrebbero benissimo essere metabolizzate... cmq non voglio entrare in troppa polemica} 
 La pericolosità del particolato non deriva solamente dalla sua composizione, che è molto varia per le diverse origini che può avere, ma anche dal fatto che fa da veicolante per altri inquinanti più pericolosi, che si legano in atmosfera e vengono poi trasportate all'interno del corpo dalla particella. Questo inquinante ha appunto origini molto varie, sia di tipo primario da attività come le industrie, i riscaldamenti, il traffico e le combustioni in generale, ma anche di tipo secondario, poiché in atmosfera può formarsi a seguito di trasformazioni chimico-fisiche di altre sostanze.
 
 Secondo INEMAR 2017 \cite{inemar2017}
@@ -470,8 +478,8 @@ Nei modelli ottenuti per trattare questo inquinante la variabile più importante
 \label{fig:pm10_medie_mensili}
 \end{figure}
 
-\todo{atrent: mi è venuto in mente, spieghi da qualche parte il dettaglio della matematica della normalizzazione che applichi? è un memo per verificarlo
-mbelotti: inserita sopra}
+%\todo{atrent: mi è venuto in mente, spieghi da qualche parte il dettaglio della matematica della normalizzazione che applichi? è un memo per verificarlo
+%mbelotti: inserita sopra}
 
 \begin{figure}[h]
 \centering
@@ -490,8 +498,8 @@ Guardando le serie normalizzate nei grafici \ref{fig:pm10_medie_mensili}, \ref{f
 %migliorata spiegazione
 
 Infatti, se a partire dal 2004 la media annuale della serie normalizzata è calata costantemente di anno in anno, dal 2014 in poi i valori si sono stabilizzati sui 30$\mu g/m^3$. Dalla serie ottenuta si capisce che mediamente la situazione per quanto riguarda questo inquinante non è critica, poiché con condizioni climatiche medie le concentrazioni sarebbero sempre sotto ai limiti legislativi. A causare i superamenti, che avvengono quasi tutti nei mesi invernali, sono invece le condizioni climatiche sfavorevoli di quei mesi che, unitamente all'uso dei riscaldamenti domestici ed in generale ad un maggior consumo energetico, portano il particolato ad accumularsi in atmosfera senza riuscire a disperderlo.
-\todo{atrent: vedi tu se togliere ultima frase
-mbelotti: io la lascerei, non mi sembra troppo azzardata o che contenga ipotesi mie non verificabili}
+%\todo{atrent: vedi tu se togliere ultima frase
+%mbelotti: io la lascerei, non mi sembra troppo azzardata o che contenga ipotesi mie non verificabili}
 
 %\todo{atrent: da qualche parte definisci cosa si intende con "fondo naturale" e come si possa misurare? con refbib intendo
 %mbelotti: non riesco a trovare bib che diano una definizione, viene citato in molte ricerche ma ne non esiste una vera e propria definizione}
@@ -549,8 +557,8 @@ Secondo quanto riportato da INEMAR 2017 i due settori maggiormente responsabili 
 Per quanto riguarda invece il settore dei riscaldamenti domestici nel corso degli ultimi anni le emissioni hanno seguito un trend sempre crescente, causato soprattutto dall'uso della legna come combustibile, che però porta effetti riscontrabili solo localmente dove è più utilizzata (e solitamente le aree cittadine non sono questo tipo di zone, anche perché il loro uso è fortemente limitato e regolamentato dalla normativa attuale).
 
 Il limite di legge alle concentrazioni di questa sostanza in atmosfera è fissato a 10 $\mu g/m^3$ a partire dal 2005, anche se ormai sono più di vent'anni che non vengono registrati valori maggiori. Il monossido, quindi, ormai non rappresenta più un problema e le sue concentrazioni in atmosfera sono molto vicine al fondo naturale \cite{arpa2018rapporto}
-\todo{sempre uno spazio tra la parola e la citazione, cite dovrebbe aggiungerlo automaticamente, decommento questo todo solo per discutere tra noi quale stile usare e poi modificare il tutto accordingly
-mbelotti: omogenizzato con spazio}
+%\todo{sempre uno spazio tra la parola e la citazione, cite dovrebbe aggiungerlo automaticamente, decommento questo todo solo per discutere tra noi quale stile usare e poi modificare il tutto accordingly
+%mbelotti: omogenizzato con spazio}
  e spesso si arriva anche ai limiti della rilevabilità da parte dei sensori.
 Pur non essendo più un problema abbiamo ritenuto che potesse comunque valer la pena di analizzare la situazione anche per quanto riguarda questo inquinante, ripetendo quanto fatto in precedenza per gli altri.
 
@@ -609,8 +617,8 @@ I precursori dell'ozono arrivano generalmente da combustioni civili ed industria
 L'ozono è noto per la sua pericolosità per l'apparato respiratorio, al quale può causare problemi temporanei anche a seguito di un'esposizione a basse concentrazioni; chiaramente se l'esposizione avviene in modo ripetuto o prolungato il rischio di avere dei danni permanenti aumenta. In generale comunque, soprattutto ad alte concentrazioni, l'ozono diventa pericoloso sia per gli esseri umani che per la vegetazione, sulla quale può avere effetti negativi.
 
 La normativa attuale fissa a 120 $\mu g/m^3$ il valore obbiettivo per la media mobile calcolata su 8 ore, con un massimo di 25 superamenti annui calcolati sulla media di 3 anni. Attualmente questo limite viene rispettato a fatica (nel 2018 nella provincia di Milano tutte le stazioni l'hanno abbondantemente superato)
-\todo{atrent: dal grafico sembra sempre sotto
-mbelotti: aggiunta frase che spieghi il perchè}
+%\todo{atrent: dal grafico sembra sempre sotto
+%mbelotti: aggiunta frase che spieghi il perchè}
 , ma ciò comunque non costituisce una criticità per la regione, in quanto questi superamenti sono tutti collegati al classico andamento stagionale \cite{arpa2018rapporto}. Nei grafici \ref{fig:03_medie_mensili}\ref{fig:o3_medie_annuali} questi superamenti non sono però così evidenti poiché sono presentati gli andamenti delle medie mensili, mentre la soglia di legge fa riferimento alla media mobile calcolata sulle 8 ore, che, in determinati momenti e con determinate condizioni, può raggiungere facilmente picchi più alti rispetto al resto del mese.
 
 \begin{table}[h!]
@@ -661,8 +669,8 @@ L'ammoniaca è un inquinante prodotto da processi degradativi di sostanza organi
 Secondo INEMAR2017 in Lombardia il 96\% delle emissioni di questa sostanza sono collegabili al settore dell'agricoltura, che infatti è il principale responsabile per quanto riguarda questo inquinante. Il traffico, invece, arriva a dare un contributo pari solamente al 1\% del totale annuo.
 
 La normativa attuale non impone limiti per le concentrazioni registrate, anche se una serie di direttive europee per lo sviluppo rurale ha mirato, nel corso degli anni, a favorire la diffusione di buone pratiche per contenerne le emissioni, come ad esempio il divieto dello spargimento di liquami (DGR X/7095 del 18 Settembre 2017). 
-\todo{atrent: ref sul divieto?
-mbelotti: aggiunta ref}
+%\todo{atrent: ref sul divieto?
+%mbelotti: aggiunta ref}
 
 \begin{table}[h!]
 \centering
@@ -839,8 +847,8 @@ L'altra variabile che in tutti e tre i casi è stata riconosciuta come buon pred
 Dal grafico\ref{fig:nox_traffico} si nota innanzitutto come la serie di Bormio abbia davvero dei valori ridotti che ci mostrano come in località di questo tipo l'inquinamento da ossidi di azoto non sia sicuramente un problema.
 Un altro aspetto che risalta subito all'occhio è l'andamento pressoché identico delle serie relative a Milano e Limito, che mostrano entrambe come a partire dal 2016/2017 si sia registrato un trend decrescente praticamente compatibile tra le due stazioni. Analizzando solo la serie di Milano avremmo potuto pensare che questo calo potesse essere collegato alla riduzione del traffico causata dai provvedimenti presi, ma osservare lo stesso andamento anche su una stazione diversa e non colpita da tali limitazioni ci indica che la causa deve per forza essere un'altra. Una possibile idea è che l'origine di questo trend sia proprio nell'innovazione tecnologica, i cui risultati stanno finalmente mettendosi in mostra nonostante le sempre maggiori attività umane, portando a registrare un calo generale e non specifico di alcune località. A Bormio, dove sicuramente la densità di attività antropiche inquinanti è nettamente ridotta rispetto alle altre due stazioni, questo calo risulta chiaramente molto minore, sia appunto perché gli effetti dell'innovazione possono essere meno evidenti a causa della minor applicazione che perché le concentrazioni sono già molto ridotte e quindi è ancora più difficile far registrare dei cali consistenti.
 
-\todo{atrent: sarebbe utile un qqplot?
-mbelotti: alla fine si è deciso di non farlo}
+%\todo{atrent: sarebbe utile un qqplot?
+%mbelotti: alla fine si è deciso di non farlo}
 
 \subsection{$NO_2$}
 Per completezza è stato trattato anche il biossido di azoto, inquinante sempre molto collegato al traffico e attorno al quale c'è molto interesse per i possibili effetti sulla salute umana.
@@ -863,7 +871,7 @@ Per quanto riguarda gli ossidi di azoto i nostri modelli sembra che effettivamen
 Per quanto riguarda il monossido di carbonio INEMAR 2017 individua trasporto su strada e combustioni non industriali (quindi i riscaldamenti, in particolare quelli alimentati a biomasse) come le due principali fonti emissive, con un percentuale di circa il 60\% del totale.
 
 La situazione per quanto riguarda questo inquinante non risulta essere critica, visto che le concentrazioni registrare sono ormai prossime a valori riconducibili al fondo naturale. Nonostante ciò abbiamo ritenuto fosse comunque utile fare un'analisi di questo tipo, sia per verificare eventuali effetti dei provvedimenti di limitazione al traffico presi, che per provare a cercare eventuali differenze tra le serie delle tre località. In questo caso risulta particolarmente interessante indagare anche su quella di Bormio, poiché è una zona in cui la legna viene ancora molto usata come forma di riscaldamento e quindi si possono indagare su quali siano gli effetti di questi ``comportamenti''.
-\todo{atrent: mi raccomando le virgolette, si fanno così in \LaTeX}
+%\todo{atrent: mi raccomando le virgolette, si fanno così in \LaTeX}
 
 La variabile con importanza maggiore nei tre modelli è stata la temperatura (0.20 a Milano, 0.34 a Limito e 0.19 a Bormio), che gli permette proprio di cogliere l'andamento tipicamente stagionale di questo inquinante. Inoltre, essendo derivante in buona parte dai riscaldamenti domestici, è abbastanza evidente come tale misura possa essere utilizzata per stimarne un loro utilizzo e quindi riuscire a fare previsioni più precise e che sappiano fare da proxy anche questo aspetto.
 La velocità del vento, chiaramente, ha ottenuto ancora una buona importanza, che ci conferma nuovamente la forte azione dispersiva di questo elemento.
@@ -949,8 +957,8 @@ In figura \ref{fig:nox_part_dep} è riportato il partial dependence plot della v
 A primo impatto si nota subito come le due serie siano sempre praticamente equivalenti, mantenendo lo stesso andamento. Si nota anche, però, come per il 2020 le due serie mostrino andamenti molto diversi, con una differenza di circa 10 $\mu g/m^3$ sulle concentrazioni previste.
 Come avevamo visto in precedenza è proprio nel 2020 che il traffico ha fatto registrare un importante calo, dovuto alle misure per il contenimento dei contagi da COVID, e si nota chiaramente come in corrispondenza di questo calo le previsioni dei due modelli siano discordanti.
 Da un lato si vede come il modello costruito senza l'uso del numero di ingressi registrati in Area C abbia effettivamente rilevato un calo abbastanza importante nelle concentrazioni misurate, dovuto proprio alla diminuzione del traffico. Dall'altro si vede invece come il modello costruito usando anche i dataset di Area C non rilevi questa differenza, continuando a mantenere un andamento in linea col trend decrescente di questi ultimi anni. Questo modello, infatti, essendo stato costruito utilizzando anche i dati sul traffico è capace di eliminarne l'influenza (e ciò avviene sia in condizioni di traffico al di sopra che al di sotto della media) e rapportando i dati dei mesi della primavera 2020 a condizioni di traffico medie ha eliminato il calo rilevato in precedenza. Questo ci dà ulteriormente conferma dell'origine da attribuire a tale calo ed inoltre ci dà una stima di come mediamente potrebbero cambiare le concentrazioni se venisse completamente (o quasi, proprio come è successo nei mesi di lockdown) eliminato il traffico veicolare privato. Si è visto quindi come la sua quasi totale eliminazione porterebbe ad avere un miglioramento delle concentrazioni di ossidi di azoto di circa il 10\%, che è un valore molto ridotto se si considera il drastico impatto sull'economia dei provvedimenti presi.
-\todo{atrent: espliciterei il ``valore'' di questo calo: 10\% di guadagno emissivo a fronte di un lockdown totale!
-mbelotti: esplicitato aggiungendo frase finale}
+%\todo{atrent: espliciterei il ``valore'' di questo calo: 10\% di guadagno emissivo a fronte di un lockdown totale!
+%mbelotti: esplicitato aggiungendo frase finale}
 
 Per quanto riguarda gli $NO_x$ abbiamo quindi dimostrato come effettivamente anche i nostri modelli siano in grado di individuare l'influenza del traffico sulle concentrazioni e abbiamo provato anche a quantificare il possibile miglioramento della qualità dell'aria che si otterrebbe eliminandolo completamente.
 Un'altra nota da fare è che i modelli creati utilizzando anche i dati degli ingressi in Area C individuano comunque lo stesso trend decrescente nelle concentrazioni già visto in precedenza, mostrandoci quindi come questo andamento non sia associabile al volume del traffico, ma che le sue cause siano da ricercare altrove. Questa è un'ulteriore conferma di come l'innovazione tecnologica sia il maggior responsabile del miglioramento delle concentrazioni di questo inquinante, oltre che al modo più efficace per la loro riduzione.
@@ -1277,5 +1285,21 @@ Il nostro lavoro ha inoltre dimostrato come sia importante avere a libera dispos
 
 %\listoffigures
 %\todo{atrent: togliere, lo commento via}
+
+\chapter*{Ringraziamenti}
+Vorrei ringraziare tutte le persone che mi hanno aiutato nella realizzazione di questo elaborato.  
+Il Prof. Andrea Trentini, relatore di questa tesi, per avermi permesso di studiare questo tema e per il supporto continuamente offerto in tutti questi mesi di lavoro. Ringrazio inoltre ARPA Lombardia per aver messo a libera disposizione tutti i dati utilizzati nei nostri studi, senza i quali nulla di ciò che si è realizzato sarebbe stato possibile.
+
+Un ringraziamento speciale va alla mia famiglia, a Paolo, Fiorella ed Ivan, che in tutti questi anni mi hanno sempre supportato senza nessuna pretesa, anche quando avrebbero avuto tutte le ragioni per averne.  
+A Vanessa, per avermi ridato speranza e felicità in un momento in cui ne ero rimasto senza.  
+Ai ciucì, il perché non devo neanche dirlo. Ed a tutti gli altri amici e colleghi con cui, in tutti questi anni, ho condiviso esperienze ed emozioni.  
+
+Infine un grazie ai Laghi Gemelli ed al rifugio, la scuola e l'università mi hanno fatto crescere tanto, lì sono diventato un uomo ed ho imparato che per essere veramente felici basta poco.
+
+\vspace{5mm}
+Grazie infinite
+
+\vspace{5mm}
+Marco
 
 \end{document}

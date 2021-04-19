@@ -1,7 +1,7 @@
 # Normalizzazione dati inquinamento atmosferico 
 
 ## Tesi
-Nella cartella 'Tesi' è disponibile il [PDF della tesi di laurea](https://github.com/MarcoBelotti96/Tesi/blob/master/Tesi/Tesi.pdf).
+Nella cartella 'Tesi' è disponibile il [PDF della tesi di laurea](https://github.com/MarcoBelotti96/Tesi/blob/master/Tesi/Tesi-consegnata.pdf).
 
 ## Cos'è la normalizzazione dei dati dell'inquinamento atmosferico? 
 Le concentrazioni degli inquinanti atmosferici sono fortemente influenzate dalle condizioni meteorologiche, che possono favorirne l'accumulo o la dispersione, e questo porta ad avere grande variabilità nei valori misurati anche in giornate molto vicine. Per normalizzazione dei dati dell'inquinamento si intende quindi quel processo, basato sull'utilizzo dell'algoritmo di machine learning Random Forest, che ci permette di ricavare, partendo dalla serie storica registrata da un sensore, l'andamento delle concentrazioni di tale inquinante indipendentemente dalle condizioni meteorologiche di ogni giornata. Così facendo diventa poi più semplice fare analisi sugli andamenti delle concentrazioni e sull'efficacia delle misure prese per il loro contenimento.
